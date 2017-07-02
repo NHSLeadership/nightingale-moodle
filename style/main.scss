@@ -190,6 +190,8 @@ $breadcrumb-divider-rtl: "◀" !default;
 
 @import "nightingale/tools/tools.functions";
 @import "nightingale/tools/tools.mixins";
+@import "sass-mq/mq";
+
 
 @import "nightingale/objects/objects.layout";
 @import "nightingale/objects/objects.list-bare";
