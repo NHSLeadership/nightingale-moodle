@@ -33,9 +33,6 @@ than 6.x.x LTS then you'll need to download the latest version.
 Visit https://nodejs.org/en/ and download the LTS version. Run the installer
 with the default options..
 
-## Install command line tools
-```xcode-select --install```
-
 ### Install the theme modules
 The NHSLA Nightingale theme relies on a number of open source code 'modules' others have created on the web. These need to be added into the app before it can be used. Install the required modules by typing
 
@@ -43,8 +40,8 @@ The NHSLA Nightingale theme relies on a number of open source code 'modules' oth
 
 You should be all installed and ready to go!
 
+## Check it works
 
-### Check it works
 - Login as site admin on your Moodle install
 - Go to Site Administration > Appearance > Theme > Theme Selector > Change Theme
 - Select **NHSLA Nightingale** from the list > Click on Use Theme
