@@ -97,19 +97,27 @@
 </div>
 <footer class="c-page-footer">
     <div class="o-wrapper">
-        <div id="course-footer">{{{ output.course_footer }}}</div>
 
-        {{{ output.login_info }}}
-        {{{ output.home_link }}}
-        <nav class="nav navbar-nav hidden-lg-up">
-            {{# output.custom_menu_flat }}
-                <ul class="list-unstyled p-t-1">
-                    {{> theme_nhsla_nightingale/custom_menu_footer }}
-                </ul>
-            {{/ output.custom_menu_flat }}
-        </nav>
-        {{{ output.standard_footer_html }}}
-        {{{ output.standard_end_of_body_html }}}
+        <div class="o-layout">
+            <div class="o-layout__item  u-6/12@lg">
+                {{{ output.login_info }}}
+                {{{ output.home_link }}}
+                <nav class="nav navbar-nav hidden-lg-up">
+                    {{# output.custom_menu_flat }}
+                        <ul class="list-unstyled p-t-1">
+                            {{> theme_nhsla_nightingale/custom_menu_footer }}
+                        </ul>
+                    {{/ output.custom_menu_flat }}
+                </nav>
+                {{{ output.standard_footer_html }}}
+                {{{ output.standard_end_of_body_html }}}
+            </div>
+            <div class="o-layout__item  u-6/12@lg">
+                <div id="course-footer">{{{ output.course_footer }}}</div>
+            </div>
+        </div>
+
+        <hr class="c-divider">
     </div>
 </footer>
 
