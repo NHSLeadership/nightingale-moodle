@@ -34,8 +34,8 @@ $extraclasses = [];
 if ($navdraweropen) {
     $extraclasses[] = 'drawer-open-left';
 }
-// Get the additional HTML for the settings bits. Not displaying Footnote in footer as that needs to be shown as header Ribbon
-$additionalhtml = theme_nhsla_nightingale_get_html_for_settings($OUTPUT, $PAGE);
+// Get the Theme settings. Display Footnote in footer
+$themesettings = theme_nhsla_nightingale_get_html_for_settings($OUTPUT, $PAGE);
 
 $bodyattributes = $OUTPUT->body_attributes($extraclasses);
 $blockshtml = $OUTPUT->blocks('side-pre');
@@ -44,6 +44,7 @@ $regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
     'output' => $OUTPUT,
+    'footnote' => $themesettings->footnote,
     'sidepreblocks' => $blockshtml,
     'hasblocks' => $hasblocks,
     'bodyattributes' => $bodyattributes,

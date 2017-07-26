@@ -100,7 +100,6 @@
 
         <div class="o-layout">
             <div class="o-layout__item  u-6/12@lg">
-                {{{ output.login_info }}}
                 {{{ output.home_link }}}
                 <nav class="nav navbar-nav hidden-lg-up">
                     {{# output.custom_menu_flat }}
@@ -110,7 +109,6 @@
                     {{/ output.custom_menu_flat }}
                 </nav>
                 {{{ output.standard_footer_html }}}
-                {{{ output.standard_end_of_body_html }}}
             </div>
             <div class="o-layout__item  u-6/12@lg">
                 <div id="course-footer">{{{ output.course_footer }}}</div>
@@ -118,6 +116,8 @@
         </div>
 
         <hr class="c-divider">
+        {{{ output.standard_end_of_body_html }}}
+        <p>{{{ footnote }}}</p>
     </div>
 </footer>
 
