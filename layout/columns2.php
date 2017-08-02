@@ -22,6 +22,13 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+$jsmodule = array(
+  'name' => 'theme_nhsla_nightingale',
+  'fullpath' => new moodle_url('/theme/nhsla_nightingale/javascript/main.js')
+);
+
+$PAGE->requires->js_init_call('M.theme_nhsla_nightingale.main.init', null, false, $jsmodule);
+
 user_preference_allow_ajax_update('drawer-open-nav', PARAM_ALPHA);
 require_once($CFG->libdir . '/behat/lib.php');
 
@@ -44,7 +51,12 @@ $regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
     'output' => $OUTPUT,
+    'config' => $CFG,
     'footnote' => $themesettings->footnote,
+    'partnershipinfo' => $themesettings->partnershipinfo,
+    'ribbonhtml'  => $themesettings->ribbonhtml,
+    'logosrc' => $themesettings->logosrc,
+    'sublogosrc'  => $themesettings->sublogosrc,
     'sidepreblocks' => $blockshtml,
     'hasblocks' => $hasblocks,
     'bodyattributes' => $bodyattributes,

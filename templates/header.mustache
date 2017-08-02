@@ -17,44 +17,185 @@
 {{!
     Page header.
 }}
-<header role="banner" class="pos-f-t navbar navbar-full navbar-light bg-faded navbar-static-top moodle-has-zindex">
+{{{ partnershipinfo }}}
+{{{ ribbonhtml }}}
+<header role="banner" class="c-page-header" id="jsPageHeader">
 
-    <div class="container-fluid navbar-nav">
+    <div class="o-wrapper">
 
-        <div data-region="drawer-toggle">
-            <button aria-expanded="{{#navdraweropen}}true{{/navdraweropen}}{{^navdraweropen}}false{{/navdraweropen}}" aria-controls="nav-drawer" type="button" class="btn pull-xs-left m-r-1 btn-secondary" data-action="toggle-drawer" data-side="left" data-preference="drawer-open-nav"><span aria-hidden="true">&#9776;</span><span class="sr-only">{{#str}}expand, core{{/str}}</span></button>
-        </div>
+          <img src="{{{ logosrc }}}" alt="NHS" width="89" height="36" class="c-page-header__logo">
 
-        <a href="{{{ config.wwwroot }}}" class="navbar-brand {{# output.should_display_navbar_logo }}has-logo{{/ output.should_display_navbar_logo }}
-            {{^ output.should_display_navbar_logo }}
-                hidden-sm-down
-            {{/ output.should_display_navbar_logo }}
-                ">
-            {{# output.should_display_navbar_logo }}
-                <span class="logo hidden-xs-down">
-                    <img src="{{output.get_compact_logo_url}}" alt="{{sitename}}">
-                </span>
-            {{/ output.should_display_navbar_logo }}
-            <span class="site-name hidden-sm-down">{{{ sitename }}}</span>
-        </a>
+          <strong class="c-page-header__title">
+            <img src="{{{ sublogosrc }}}" alt="Leadership Academy" width="241" height="25">
+          </strong>
 
-        <!-- user_menu -->
-        {{{ output.user_menu }}}
+          <button class="c-nav-trigger" id="jsNavTrigger" aria-label="menu" data-expands="#jsNav" role="button" aria-expanded="false">☰</button>
 
-        <!-- navbar_plugin_output -->
-        {{{ output.navbar_plugin_output }}}
+          <nav class="c-nav-primary  c-page-header__nav" id="primaryNav">
 
-        <!-- search_box -->
-        <span class="hidden-md-down">
-        {{{ output.search_box }}}
-        </span>
+            <ul class="c-nav-primary__list" id="jsNav">
 
-        <nav class="nav navbar-nav hidden-md-down">
-            <!-- custom_menu -->
-            {{{ output.custom_menu }}}
-            <!-- page_heading_menu -->
-            {{{ output.page_heading_menu }}}
-        </nav>
-    </div>
+              <li class="c-nav-primary__item">
+                <a href="{{{config.wwwroot}}}/my" class="c-nav-primary__link">Dashboard</a>
+              </li>
+
+              <li class="c-nav-primary__item">
+                <button class="c-nav-primary__link" data-expands="#item-2-sub" data-popup="" role="button" aria-expanded="false" aria-haspopup="true">Programmes</button>
+                    <nav class="c-nav-primary__sub  jsNavSub" id="item-2-sub" role="group" aria-label="sub navigation menu">
+
+                        <div class="o-wrapper">
+
+                            <div class="o-layout">
+                                <div class="o-layout__item  u-6/12@lg">
+
+                                    <h4 class="u-margin-bottom-small">This is a new sub nav area</h4>
+
+                                    <p class="u-margin-bottom-small"><small>Menu short description that introduces the user to the list
+                                    within this dropdown menu.</small></p>
+
+                                    <p class="u-margin-bottom-small">
+                                    <a href="#0" class="c-btn  c-btn--primary  c-btn--full">Button</a>
+                                </p>
+
+                                </div><!-- /.o-layout__item -->
+                                <div class="o-layout__item  u-6/12@lg">
+
+                                    <ul class="c-nav-primary__sub-links">
+                                        <li>
+                                            <a href="#0">Sub Link 1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#0">Sub Link 2</a>
+                                        </li>
+                                        <li>
+                                            <a href="#0">Sub Link 3</a>
+                                        </li>
+                                        <li>
+                                            <a href="#0">Sub Link 4</a>
+                                        </li>
+                                    </ul>
+
+                                </div><!-- /.o-layout__item -->
+                            </div><!-- /.o-layout -->
+
+                        </div><!-- /.o-wrapper -->
+
+                    </nav>
+
+              </li>
+
+              <li class="c-nav-primary__item">
+                <button class="c-nav-primary__link" data-expands="#item-3-sub" data-popup="" role="button" aria-expanded="false" aria-haspopup="true">Notifications</button>
+                  <nav class="c-nav-primary__sub  jsNavSub" id="item-3-sub" role="group" aria-label="sub navigation menu">
+
+                      <div class="o-wrapper">
+
+                          <div class="o-layout">
+                              <div class="o-layout__item  u-6/12@lg">
+
+                                  <h4 class="u-margin-bottom-small">This is a new sub nav area</h4>
+
+                                  <p class="u-margin-bottom-small"><small>Menu short description that introduces the user to the list
+                                  within this dropdown menu.</small></p>
+
+                                  <p class="u-margin-bottom-small">
+                                  <a href="#0" class="c-btn  c-btn--primary  c-btn--full">Button</a>
+                              </p>
+
+                              </div><!-- /.o-layout__item -->
+                              <div class="o-layout__item  u-6/12@lg">
+
+                                  <ul class="c-nav-primary__sub-links">
+                                      <li>
+                                          <a href="#0">Sub Link 1</a>
+                                      </li>
+                                      <li>
+                                          <a href="#0">Sub Link 2</a>
+                                      </li>
+                                      <li>
+                                          <a href="#0">Sub Link 3</a>
+                                      </li>
+                                      <li>
+                                          <a href="#0">Sub Link 4</a>
+                                      </li>
+                                  </ul>
+
+                              </div><!-- /.o-layout__item -->
+                          </div><!-- /.o-layout -->
+
+                      </div><!-- /.o-wrapper -->
+
+                  </nav>
+            </li>
+
+            <li class="c-nav-primary__item">
+                {{# flatnavigation }}
+                  {{#action}}
+                  <a class="c-nav-primary__link" href="{{{action}}}" data-key="{{key}}">
+                      <div class="m-l-{{get_indent}}">
+                          {{^is_section}}
+                            {{#showdivider}}
+                              Site Admin
+                            {{/showdivider}}
+                          {{/is_section}}
+                      </div>
+                  </a>
+                  {{/action}}
+                {{/ flatnavigation }}
+            </li>
+
+            <li class="c-nav-primary__item">
+                <button class="c-nav-primary__link" data-expands="#item-5-sub" data-popup="" role="button" aria-expanded="false" aria-haspopup="true">Profile</button>
+                  <nav class="c-nav-primary__sub  jsNavSub" id="item-5-sub" role="group" aria-label="sub navigation menu">
+
+                      <div class="o-wrapper">
+
+                          <div class="o-layout">
+                              <div class="o-layout__item  u-6/12@lg">
+
+                                  <h4 class="u-margin-bottom-small">This is a new sub nav area</h4>
+
+                                  <p class="u-margin-bottom-small"><small>Menu short description that introduces the user to the list
+                                  within this dropdown menu.</small></p>
+
+                                  <p class="u-margin-bottom-small">
+                                  <a href="#0" class="c-btn  c-btn--primary  c-btn--full">Button</a>
+                              </p>
+
+                              </div><!-- /.o-layout__item -->
+                              <div class="o-layout__item  u-6/12@lg">
+
+                                  <ul class="c-nav-primary__sub-links">
+                                      <li>
+                                          <a href="#0">Sub Link 1</a>
+                                      </li>
+                                      <li>
+                                          <a href="#0">Sub Link 2</a>
+                                      </li>
+                                      <li>
+                                          <a href="#0">Sub Link 3</a>
+                                      </li>
+                                      <li>
+                                          <a href="#0">Sub Link 4</a>
+                                      </li>
+                                  </ul>
+
+                              </div><!-- /.o-layout__item -->
+                          </div><!-- /.o-layout -->
+
+                      </div><!-- /.o-wrapper -->
+
+                  </nav>
+            </li>
+
+              <li class="c-nav-primary__item">
+                <a href="#0" class="c-nav-primary__link">Sign Out</a>
+              </li>
+
+            </ul>
+          </nav>
+
+     </div>
+
 </header>
 

@@ -147,5 +147,72 @@ function theme_nhsla_nightingale_get_html_for_settings(renderer_base $output, mo
         $return->footnote = '<div class="footnote text-center">'.format_text($page->theme->settings->footnote).'</div>';
     }
 
+    $return->partnershipinfo = '';
+    if (!empty($page->theme->settings->partnershipinfo)) {
+      $return->partnershipinfo = '<div class="c-ribbon  c-ribbon--expandable">
+                                    <div class="o-wrapper">
+                                        <details class="c-ribbon__body">
+                                            <summary><b>In partnership with:</b> '.format_string($page->theme->settings->partnershipinfo).'</summary>
+                                        </details>
+                                    </div>
+                                  </div>';
+    }
+
+    $return->ribbons = '';
+    $return->ribbonhtml = '';
+    if(!empty($page->theme->settings->ribbons)) {
+        $return->ribbonhtml = theme_nhsla_nightingale_get_ribbonhtml($page->theme->settings->ribbons);
+    }
+
+    $return->logosrc = '';
+    if (!empty($page->theme->settings->logo)) {
+      $return->logosrc = $page->theme->setting_file_url('logo', 'logo');
+    } else if(!empty($page->theme->settings->smalllogo)) {
+      $return->logosrc = $page->theme->setting_file_url('smalllogo', 'smalllogo');
+    }
+
+    $return->sublogosrc = '';
+    if (!empty($page->theme->settings->sublogo)) {
+      $return->sublogosrc = $page->theme->setting_file_url('sublogo', 'sublogo');
+    }
+
     return $return;
+}
+
+function theme_nhsla_nightingale_get_ribbonhtml($ribbon) {
+
+  $ribbonhtml = '';
+
+  if(!empty($ribbon)) {
+
+    switch($ribbon) {
+
+      case 'none':
+        $ribbonhtml = '';
+        break;
+
+      case 'beta':
+        $ribbonhtml = '<div class="c-ribbon  c-ribbon--beta  u-margin-bottom">
+                        <div class="o-wrapper">
+                            <strong class="c-ribbon__tag">Beta</strong>
+                            <strong class="c-ribbon__body">This site is in beta stage - your <a href="#0">feedback</a> will help us to improve it.</strong>
+                        </div>
+                       </div>';
+        break;
+
+      case 'alpha':
+        $ribbonhtml = '<div class="c-ribbon  c-ribbon--alpha  u-margin-bottom">
+                        <div class="o-wrapper">
+                            <strong class="c-ribbon__tag">Alpha</strong>
+                            <strong class="c-ribbon__body">This site is in alpha stage - your <a href="#0">feedback</a> will help us to improve it.</strong>
+                        </div>
+                       </div>';
+        break;
+
+    }
+
+  }
+
+  return $ribbonhtml;
+
 }
