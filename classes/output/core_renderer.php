@@ -711,4 +711,26 @@ class core_renderer extends \core_renderer {
     public function secure_login_info() {
         return $this->login_info(false);
     }
+
+    /**
+     * Copied from core lib/outputrenderers.php
+     * Removed Moodle logo as site link to appear in Footer
+     * Return the 'back' or 'Home' link that normally appears in the footer.
+     *
+     * @return string HTML fragment.
+     */
+    public function home_link() {
+      global $CFG, $SITE;
+
+
+      if ($this->page->course->id == $SITE->id || strpos($this->page->pagetype, 'course-view') === 0) {
+        return '<div class="homelink"><a href="' . $CFG->wwwroot . '/">' .
+          get_string('home') . '</a></div>';
+
+      } else {
+        return '<div class="homelink"><a href="' . $CFG->wwwroot . '/course/view.php?id=' . $this->page->course->id . '">' .
+          format_string($this->page->course->shortname, true, array('context' => $this->page->context)) . '</a></div>';
+      }
+
+    }
 }

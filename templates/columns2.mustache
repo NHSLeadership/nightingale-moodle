@@ -95,25 +95,29 @@
     </div>
     {{> theme_nhsla_nightingale/nav-drawer }}
 </div>
-<footer id="page-footer" class="p-y-1 bg-inverse">
-    <div class="container">
-        <div id="course-footer">{{{ output.course_footer }}}</div>
+<footer class="c-page-footer">
+    <div class="o-wrapper">
 
-        {{# output.page_doc_link }}
-            <p class="helplink">{{{ output.page_doc_link }}}</p>
-        {{/ output.page_doc_link }}
+        <div class="o-layout">
+            <div class="o-layout__item  u-6/12@lg">
+                {{{ output.home_link }}}
+                <nav class="nav navbar-nav hidden-lg-up">
+                    {{# output.custom_menu_flat }}
+                        <ul class="list-unstyled p-t-1">
+                            {{> theme_nhsla_nightingale/custom_menu_footer }}
+                        </ul>
+                    {{/ output.custom_menu_flat }}
+                </nav>
+                {{{ output.standard_footer_html }}}
+            </div>
+            <div class="o-layout__item  u-6/12@lg">
+                <div id="course-footer">{{{ output.course_footer }}}</div>
+            </div>
+        </div>
 
-        {{{ output.login_info }}}
-        {{{ output.home_link }}}
-        <nav class="nav navbar-nav hidden-lg-up">
-            {{# output.custom_menu_flat }}
-                <ul class="list-unstyled p-t-1">
-                    {{> theme_nhsla_nightingale/custom_menu_footer }}
-                </ul>
-            {{/ output.custom_menu_flat }}
-        </nav>
-        {{{ output.standard_footer_html }}}
+        <hr class="c-divider">
         {{{ output.standard_end_of_body_html }}}
+        {{{ footnote }}}
     </div>
 </footer>
 
