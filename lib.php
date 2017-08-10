@@ -192,7 +192,7 @@ function theme_nhsla_nightingale_get_ribbonhtml($ribbon) {
         break;
 
       case 'beta':
-        $ribbonhtml = '<div class="c-ribbon  c-ribbon--beta  u-margin-bottom">
+        $ribbonhtml = '<div class="c-ribbon  c-ribbon--beta">
                         <div class="o-wrapper">
                             <strong class="c-ribbon__tag">Beta</strong>
                             <strong class="c-ribbon__body">This site is in beta stage - your <a href="#0">feedback</a> will help us to improve it.</strong>
@@ -201,7 +201,7 @@ function theme_nhsla_nightingale_get_ribbonhtml($ribbon) {
         break;
 
       case 'alpha':
-        $ribbonhtml = '<div class="c-ribbon  c-ribbon--alpha  u-margin-bottom">
+        $ribbonhtml = '<div class="c-ribbon  c-ribbon--alpha">
                         <div class="o-wrapper">
                             <strong class="c-ribbon__tag">Alpha</strong>
                             <strong class="c-ribbon__body">This site is in alpha stage - your <a href="#0">feedback</a> will help us to improve it.</strong>

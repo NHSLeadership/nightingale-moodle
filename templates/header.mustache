@@ -17,8 +17,8 @@
 {{!
     Page header.
 }}
-{{{ partnershipinfo }}}
 {{{ ribbonhtml }}}
+{{{ partnershipinfo }}}
 <header role="banner" class="c-page-header" id="jsPageHeader">
 
     <div class="o-wrapper">
@@ -48,33 +48,25 @@
                             <div class="o-layout">
                                 <div class="o-layout__item  u-6/12@lg">
 
-                                    <h4 class="u-margin-bottom-small">This is a new sub nav area</h4>
-
-                                    <p class="u-margin-bottom-small"><small>Menu short description that introduces the user to the list
-                                    within this dropdown menu.</small></p>
-
-                                    <p class="u-margin-bottom-small">
-                                    <a href="#0" class="c-btn  c-btn--primary  c-btn--full">Button</a>
-                                </p>
+                                    <h4 class="u-margin-bottom-small">Programmes we offer...</h4>
 
                                 </div><!-- /.o-layout__item -->
                                 <div class="o-layout__item  u-6/12@lg">
-
-                                    <ul class="c-nav-primary__sub-links">
-                                        <li>
-                                            <a href="#0">Sub Link 1</a>
-                                        </li>
-                                        <li>
-                                            <a href="#0">Sub Link 2</a>
-                                        </li>
-                                        <li>
-                                            <a href="#0">Sub Link 3</a>
-                                        </li>
-                                        <li>
-                                            <a href="#0">Sub Link 4</a>
-                                        </li>
-                                    </ul>
-
+                                    {{# flatnavigation }}
+                                        {{#action}}
+                                            {{^is_section}}
+                                            {{^showdivider}}
+                                            {{#get_indent}}
+                                            <ul class="c-nav-primary__sub-links">
+                                                <li>
+                                                    <a href="{{{action}}}" data-key="{{key}}">{{{text}}}</a>
+                                                </li>
+                                            </ul>
+                                            {{/get_indent}}
+                                            {{/showdivider}}
+                                            {{/is_section}}
+                                        {{/action}}
+                                    {{/ flatnavigation }}
                                 </div><!-- /.o-layout__item -->
                             </div><!-- /.o-layout -->
 
@@ -93,32 +85,60 @@
                           <div class="o-layout">
                               <div class="o-layout__item  u-6/12@lg">
 
-                                  <h4 class="u-margin-bottom-small">This is a new sub nav area</h4>
+                                 {{< core/popover_region }}
+                                     {{$classes}}popover-region-notifications{{/classes}}
+                                     {{$attributes}}id="nav-notification-popover-container" data-userid="{{userid}}"{{/attributes}}
 
-                                  <p class="u-margin-bottom-small"><small>Menu short description that introduces the user to the list
-                                  within this dropdown menu.</small></p>
+                                     {{$togglelabel}}{{#str}} shownotificationwindownonew, message {{/str}}{{/togglelabel}}
+                                     {{$togglecontent}}
+                                         {{#pix}} i/notifications, core, {{#str}} togglenotificationmenu, message {{/str}} {{/pix}}
+                                         <div class="count-container hidden" data-region="count-container"></div>
+                                     {{/togglecontent}}
 
-                                  <p class="u-margin-bottom-small">
-                                  <a href="#0" class="c-btn  c-btn--primary  c-btn--full">Button</a>
-                              </p>
 
-                              </div><!-- /.o-layout__item -->
-                              <div class="o-layout__item  u-6/12@lg">
+                                     {{$headeractions}}
+                                         {{< core/hover_tooltip }}
+                                             {{$anchor}}
+                                                 <a class="mark-all-read-button"
+                                                     href="#"
+                                                     title="{{#str}} markallread {{/str}}"
+                                                     data-action="mark-all-read"
+                                                     role="button">
+                                                     <span class="normal-icon">{{#pix}} t/markasread, core, {{#str}} markallread {{/str}} {{/pix}}</span>
+                                                 </a>
+                                             {{/anchor}}
+                                             {{$tooltip}}{{#str}} markallread {{/str}}{{/tooltip}}
+                                         {{/ core/hover_tooltip }}
+                                         {{< core/hover_tooltip }}
+                                             {{$anchor}}
+                                                 <a href="{{{urls.preferences}}}"
+                                                     title="{{#str}} notificationpreferences, message {{/str}}">
+                                                     {{#pix}} i/settings, core, {{#str}} notificationpreferences, message {{/str}} {{/pix}}
+                                                 </a>
+                                             {{/anchor}}
+                                             {{$tooltip}}{{#str}} notificationpreferences, message {{/str}}{{/tooltip}}
+                                         {{/ core/hover_tooltip }}
+                                     {{/headeractions}}
 
-                                  <ul class="c-nav-primary__sub-links">
-                                      <li>
-                                          <a href="#0">Sub Link 1</a>
-                                      </li>
-                                      <li>
-                                          <a href="#0">Sub Link 2</a>
-                                      </li>
-                                      <li>
-                                          <a href="#0">Sub Link 3</a>
-                                      </li>
-                                      <li>
-                                          <a href="#0">Sub Link 4</a>
-                                      </li>
-                                  </ul>
+                                     {{$content}}
+                                         <div class="all-notifications"
+                                             data-region="all-notifications"
+                                             role="log"
+                                             aria-busy="false"
+                                             aria-atomic="false"
+                                             aria-relevant="additions"></div>
+                                         <div class="empty-message" tabindex="0" data-region="empty-message">{{#str}} nonotifications, message {{/str}}</div>
+                                     {{/content}}
+                                 {{/ core/popover_region }}
+                                 {{#js}}
+                                 require(['jquery', 'message_popup/notification_popover_controller'], function($, controller) {
+                                     var container = $('#nav-notification-popover-container');
+                                     var controller = new controller(container);
+                                     controller.registerEventListeners();
+                                     controller.registerListNavigationEventListeners();
+                                 });
+                                 {{/js}}
+
 
                               </div><!-- /.o-layout__item -->
                           </div><!-- /.o-layout -->
@@ -151,32 +171,11 @@
                       <div class="o-wrapper">
 
                           <div class="o-layout">
+
                               <div class="o-layout__item  u-6/12@lg">
-
-                                  <h4 class="u-margin-bottom-small">This is a new sub nav area</h4>
-
-                                  <p class="u-margin-bottom-small"><small>Menu short description that introduces the user to the list
-                                  within this dropdown menu.</small></p>
-
-                                  <p class="u-margin-bottom-small">
-                                  <a href="#0" class="c-btn  c-btn--primary  c-btn--full">Button</a>
-                              </p>
-
-                              </div><!-- /.o-layout__item -->
-                              <div class="o-layout__item  u-6/12@lg">
-
                                   <ul class="c-nav-primary__sub-links">
                                       <li>
-                                          <a href="#0">Sub Link 1</a>
-                                      </li>
-                                      <li>
-                                          <a href="#0">Sub Link 2</a>
-                                      </li>
-                                      <li>
-                                          <a href="#0">Sub Link 3</a>
-                                      </li>
-                                      <li>
-                                          <a href="#0">Sub Link 4</a>
+                                          <a href="#0">{{{output.user_menu}}}</a>
                                       </li>
                                   </ul>
 
