@@ -144,7 +144,7 @@ function theme_nhsla_nightingale_get_html_for_settings(renderer_base $output, mo
 
     $return->footnote = '';
     if (!empty($page->theme->settings->footnote)) {
-        $return->footnote = '<div class="footnote text-center">'.format_text($page->theme->settings->footnote).'</div>';
+        $return->footnote = '<p class="c-page-footer__smallprint"><small>'.format_string($page->theme->settings->footnote).'</small></p>';
     }
 
     return $return;
