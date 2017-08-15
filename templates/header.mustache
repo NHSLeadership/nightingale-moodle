@@ -148,21 +148,7 @@
                   </nav>
             </li>
 
-            <li class="c-nav-primary__item">
-                {{# flatnavigation }}
-                  {{#action}}
-                  <a class="c-nav-primary__link" href="{{{action}}}" data-key="{{key}}">
-                      <div class="m-l-{{get_indent}}">
-                          {{^is_section}}
-                            {{#showdivider}}
-                              Site Admin
-                            {{/showdivider}}
-                          {{/is_section}}
-                      </div>
-                  </a>
-                  {{/action}}
-                {{/ flatnavigation }}
-            </li>
+            {{{siteadminlink}}}
 
             <li class="c-nav-primary__item">
                 <button class="c-nav-primary__link" data-expands="#item-5-sub" data-popup="" role="button" aria-expanded="false" aria-haspopup="true">Profile</button>

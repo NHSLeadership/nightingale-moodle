@@ -43,6 +43,7 @@ if ($navdraweropen) {
 }
 // Get the Theme settings. Display Footnote in footer
 $themesettings = theme_nhsla_nightingale_get_html_for_settings($OUTPUT, $PAGE);
+$siteadminhtml = get_siteadmin_link();
 
 $bodyattributes = $OUTPUT->body_attributes($extraclasses);
 $blockshtml = $OUTPUT->blocks('side-pre');
@@ -57,6 +58,7 @@ $templatecontext = [
     'ribbonhtml'  => $themesettings->ribbonhtml,
     'logosrc' => $themesettings->logosrc,
     'sublogosrc'  => $themesettings->sublogosrc,
+    'siteadminlink' => $siteadminhtml,
     'sidepreblocks' => $blockshtml,
     'hasblocks' => $hasblocks,
     'bodyattributes' => $bodyattributes,

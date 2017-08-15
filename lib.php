@@ -179,6 +179,12 @@ function theme_nhsla_nightingale_get_html_for_settings(renderer_base $output, mo
     return $return;
 }
 
+/**
+ * Gets Alpha/Beta/Live ribbon dependent upon Theme setting
+ *
+ * @param $ribbon
+ * @return string
+ */
 function theme_nhsla_nightingale_get_ribbonhtml($ribbon) {
 
   $ribbonhtml = '';
@@ -214,5 +220,27 @@ function theme_nhsla_nightingale_get_ribbonhtml($ribbon) {
   }
 
   return $ribbonhtml;
+
+}
+
+
+/**
+ * Gets Site admin Link to show in Header Nav
+ *
+ * @return string
+ */
+function get_siteadmin_link() {
+
+  global $USER, $CFG;
+
+  $siteadminhtml = "";
+  if(is_siteadmin($USER->id)) {
+
+    $siteadminhtml = "<li class='c-nav-primary__item'>
+                        <a href='".$CFG->wwwroot."/admin/search.php' class='c-nav-primary__link'>Site Admin</a>
+                      </li>";
+  }
+
+  return $siteadminhtml;
 
 }
