@@ -17,7 +17,7 @@
 /**
  * Used to convert a bootswatch file from https://bootswatch.com/ to a Moodle preset.
  *
- * @package    theme_nhsla_nightingale
+ * @package    theme_nightingale
  * @subpackage cli
  */
 

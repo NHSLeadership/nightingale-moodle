@@ -15,15 +15,15 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * @package   theme_nhsla_nightingale
+ * @package   theme_nightingale
  */
 
 defined('MOODLE_INTERNAL') || die();
 
 /**
- * @package   theme_nhsla_nightingale
+ * @package   theme_nightingale
  */
-class theme_nhsla_nightingale_admin_settingspage_tabs extends admin_settingpage {
+class theme_nightingale_admin_settingspage_tabs extends admin_settingpage {
 
     /** @var The tabs */
     protected $tabs = array();
@@ -89,7 +89,7 @@ class theme_nhsla_nightingale_admin_settingspage_tabs extends admin_settingpage 
             return '';
         }
 
-        return $OUTPUT->render_from_template('theme_nhsla_nightingale/admin_setting_tabs', $context);
+        return $OUTPUT->render_from_template('theme_nightingale/admin_setting_tabs', $context);
     }
 
 }

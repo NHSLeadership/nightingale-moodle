@@ -17,7 +17,7 @@
 /**
  * Theme functions.
  *
- * @package    theme_nhsla_nightingale
+ * @package    theme_nightingale
  */
 
 defined('MOODLE_INTERNAL') || die();
@@ -31,12 +31,12 @@ defined('MOODLE_INTERNAL') || die();
  * @param theme_config $theme The theme config object.
  * @return string The parsed CSS The parsed CSS.
  */
-function theme_nhsla_nightingale_process_css($css, $theme) {
+function theme_nightingale_process_css($css, $theme) {
     global $OUTPUT;
 
     // Set the background image for the logo.
     $logo = $OUTPUT->get_logo_url(null, 75);
-    $css = theme_nhsla_nightingale_set_logo($css, $logo);
+    $css = theme_nightingale_set_logo($css, $logo);
 
     // Set Main CSS.
     if (!empty($theme->settings->maincss)) {
@@ -44,7 +44,7 @@ function theme_nhsla_nightingale_process_css($css, $theme) {
     } else {
         $maincss = null;
     }
-    $css = theme_nhsla_nightingale_set_maincss($css, $maincss);
+    $css = theme_nightingale_set_maincss($css, $maincss);
 
     return $css;
 }
@@ -56,7 +56,7 @@ function theme_nhsla_nightingale_process_css($css, $theme) {
  * @param string $logo The URL of the logo.
  * @return string The parsed CSS
  */
-function theme_nhsla_nightingale_set_logo($css, $logo) {
+function theme_nightingale_set_logo($css, $logo) {
     $tag = '[[setting:logo]]';
     $replacement = $logo;
     if (is_null($replacement)) {
@@ -75,7 +75,7 @@ function theme_nhsla_nightingale_set_logo($css, $logo) {
  * @param string $maincsss The main CSS to add.
  * @return string The CSS which now contains our main CSS.
  */
-function theme_nhsla_nightingale_set_maincss($css, $maincss) {
+function theme_nightingale_set_maincss($css, $maincss) {
     $tag = '[[setting:maincss]]';
     $replacement = $maincss;
     if (is_null($replacement)) {
@@ -99,9 +99,9 @@ function theme_nhsla_nightingale_set_maincss($css, $maincss) {
  * @param array $options
  * @return bool
  */
-function theme_nhsla_nightingale_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
+function theme_nightingale_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
     if ($context->contextlevel == CONTEXT_SYSTEM and ($filearea === 'logo' || $filearea === 'smalllogo')) {
-        $theme = theme_config::load('nhsla_nightingale');
+        $theme = theme_config::load('nightingale');
         // By default, theme files must be cache-able by both browsers and proxies.
         if (!array_key_exists('cacheability', $options)) {
             $options['cacheability'] = 'public';
@@ -115,7 +115,7 @@ function theme_nhsla_nightingale_pluginfile($course, $cm, $context, $filearea, $
 /**
  * Returns an object containing HTML for the areas affected by settings.
  *
- * Do not add NHSLA Nightingale specific logic in here, child themes should be able to
+ * Do not add Nightingale specific logic in here, child themes should be able to
  * rely on that function just by declaring settings with similar names.
  *
  * @param renderer_base $output Pass in $OUTPUT.
@@ -125,7 +125,7 @@ function theme_nhsla_nightingale_pluginfile($course, $cm, $context, $filearea, $
  *      - heading HTML to use for the heading. A logo if one is selected or the default heading.
  *      - footnote HTML to use as a footnote. By default ''.
  */
-function theme_nhsla_nightingale_get_html_for_settings(renderer_base $output, moodle_page $page) {
+function theme_nightingale_get_html_for_settings(renderer_base $output, moodle_page $page) {
     global $CFG;
     $return = new stdClass;
 

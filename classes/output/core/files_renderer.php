@@ -24,12 +24,12 @@ require_once($CFG->dirroot . '/files/renderer.php');
 
 /**
  * Rendering of files viewer related widgets.
- * @package   theme_nhsla_nightingale
+ * @package   theme_nightingale
  */
 
 /**
  * Rendering of files viewer related widgets.
- * @package   theme_nhsla_nightingale
+ * @package   theme_nightingale
  */
 class files_renderer extends \core_files_renderer {
     /**
