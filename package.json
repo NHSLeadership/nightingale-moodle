@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Moodle theme Nightingale using nightingale-core",
   "scripts": {
-    "build": "mkdir -p ./style && cat style/main.scss | node_modules/.bin/node-sass --precision 9 --include-path style/ --include-path node_modules/ --include-path node_modules/nightingale/ --output-style expanded > style/main.css",
-    "watch": "npm run build && node_modules/.bin/node-sass --precision 9 --include-path style/ --include-path node_modules/ --include-path node_modules/nightingale/ style/main.scss --watch"
+    "build": "mkdir -p ./style && cat style/main.scss | node_modules/.bin/node-sass --precision 9 --include-path style/ --include-path scss/ --include-path node_modules/ --include-path node_modules/nightingale/ --output-style expanded > style/main.css",
+    "watch": "npm run build && node_modules/.bin/node-sass --precision 9 --include-path style/ --include-path scss/ --include-path node_modules/ --include-path node_modules/nightingale/ style/main.scss --watch"
   },
   "dependencies": {
     "nightingale": "git+ssh://git@github.com/NHSLeadership/nightingale.git#develop",

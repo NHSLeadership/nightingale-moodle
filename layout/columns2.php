@@ -24,7 +24,7 @@ defined('MOODLE_INTERNAL') || die();
 
 $jsmodule = array(
   'name' => 'theme_nhsla_nightingale',
-  'fullpath' => new moodle_url('/theme/nhsla_nightingale/javascript/main.js')
+  'fullpath' => new moodle_url('/theme/nightingale/javascript/main.js')
 );
 
 $PAGE->requires->js_init_call('M.theme_nhsla_nightingale.main.init', null, false, $jsmodule);

@@ -21,164 +21,94 @@
 {{{ partnershipinfo }}}
 <header role="banner" class="c-page-header" id="jsPageHeader">
 
-    <div class="o-wrapper">
+    <div class="o-wrapper  c-page-header__inner">
 
-          <img src="{{{ logosrc }}}" alt="NHS" width="89" height="36" class="c-page-header__logo">
+          <a href="" class="c-page-header__lockup">
+            <img src="{{{ logosrc }}}" alt="NHS" width="204" height="62" class="c-page-header__logo">
+          </a>
 
-          <strong class="c-page-header__title">
-            <img src="{{{ sublogosrc }}}" alt="Leadership Academy" width="241" height="25">
-          </strong>
+           <div class="c-page-header__controls">
 
-          <button class="c-nav-trigger" id="jsNavTrigger" aria-label="menu" data-expands="#jsNav" role="button" aria-expanded="false">☰</button>
+              <button class="c-nav-trigger" id="jsNavTrigger" aria-label="menu" data-expands="#jsNav" role="button" aria-expanded="false">☰</button>
 
-          <nav class="c-nav-primary  c-page-header__nav" id="primaryNav">
+              <nav class="c-nav-primary  c-page-header__nav" id="primaryNav">
 
-            <ul class="c-nav-primary__list" id="jsNav">
+                <ul class="c-nav-primary__list" id="jsNav">
 
-              <li class="c-nav-primary__item">
-                <a href="{{{config.wwwroot}}}/my" class="c-nav-primary__link">Dashboard</a>
-              </li>
+                  <li class="c-nav-primary__item">
+                    <a href="{{{config.wwwroot}}}/my" class="c-nav-primary__link">Dashboard</a>
+                  </li>
 
-              <li class="c-nav-primary__item">
-                <button class="c-nav-primary__link" data-expands="#item-2-sub" data-popup="" role="button" aria-expanded="false" aria-haspopup="true">Programmes</button>
-                    <nav class="c-nav-primary__sub  jsNavSub" id="item-2-sub" role="group" aria-label="sub navigation menu">
+                  <li class="c-nav-primary__item">
+                    <button class="c-nav-primary__link" data-expands="#item-2-sub" data-popup="" role="button" aria-expanded="false" aria-haspopup="true">Programmes</button>
+                        <nav class="c-nav-primary__sub  jsNavSub" id="item-2-sub" role="group" aria-label="sub navigation menu">
 
-                        <div class="o-wrapper">
+                            <div class="o-wrapper">
 
-                            <div class="o-layout">
-                                <div class="o-layout__item  u-6/12@lg">
+                                <div class="o-layout">
+                                    <div class="o-layout__item  u-6/12@lg">
 
-                                    <h4 class="u-margin-bottom-small">Programmes we offer...</h4>
+                                        <h4 class="u-margin-bottom-small">Programmes we offer...</h4>
 
-                                </div><!-- /.o-layout__item -->
-                                <div class="o-layout__item  u-6/12@lg">
-                                    {{# flatnavigation }}
-                                        {{#action}}
-                                            {{^is_section}}
-                                            {{^showdivider}}
-                                            {{#get_indent}}
-                                            <ul class="c-nav-primary__sub-links">
-                                                <li>
-                                                    <a href="{{{action}}}" data-key="{{key}}">{{{text}}}</a>
-                                                </li>
-                                            </ul>
-                                            {{/get_indent}}
-                                            {{/showdivider}}
-                                            {{/is_section}}
-                                        {{/action}}
-                                    {{/ flatnavigation }}
-                                </div><!-- /.o-layout__item -->
-                            </div><!-- /.o-layout -->
+                                    </div><!-- /.o-layout__item -->
+                                    <div class="o-layout__item  u-6/12@lg">
+                                        {{# flatnavigation }}
+                                            {{#action}}
+                                                {{^is_section}}
+                                                {{^showdivider}}
+                                                {{#get_indent}}
+                                                <ul class="c-nav-primary__sub-links">
+                                                    <li>
+                                                        <a href="{{{action}}}" data-key="{{key}}">{{{text}}}</a>
+                                                    </li>
+                                                </ul>
+                                                {{/get_indent}}
+                                                {{/showdivider}}
+                                                {{/is_section}}
+                                            {{/action}}
+                                        {{/ flatnavigation }}
+                                    </div><!-- /.o-layout__item -->
+                                </div><!-- /.o-layout -->
 
-                        </div><!-- /.o-wrapper -->
+                            </div><!-- /.o-wrapper -->
 
-                    </nav>
+                        </nav>
 
-              </li>
-
-              <li class="c-nav-primary__item">
-                <button class="c-nav-primary__link" data-expands="#item-3-sub" data-popup="" role="button" aria-expanded="false" aria-haspopup="true">Notifications</button>
-                  <nav class="c-nav-primary__sub  jsNavSub" id="item-3-sub" role="group" aria-label="sub navigation menu">
-
-                      <div class="o-wrapper">
-
-                          <div class="o-layout">
-                              <div class="o-layout__item  u-6/12@lg">
-
-                                 {{< core/popover_region }}
-                                     {{$classes}}popover-region-notifications{{/classes}}
-                                     {{$attributes}}id="nav-notification-popover-container" data-userid="{{userid}}"{{/attributes}}
-
-                                     {{$togglelabel}}{{#str}} shownotificationwindownonew, message {{/str}}{{/togglelabel}}
-                                     {{$togglecontent}}
-                                         {{#pix}} i/notifications, core, {{#str}} togglenotificationmenu, message {{/str}} {{/pix}}
-                                         <div class="count-container hidden" data-region="count-container"></div>
-                                     {{/togglecontent}}
+                  </li>
 
 
-                                     {{$headeractions}}
-                                         {{< core/hover_tooltip }}
-                                             {{$anchor}}
-                                                 <a class="mark-all-read-button"
-                                                     href="#"
-                                                     title="{{#str}} markallread {{/str}}"
-                                                     data-action="mark-all-read"
-                                                     role="button">
-                                                     <span class="normal-icon">{{#pix}} t/markasread, core, {{#str}} markallread {{/str}} {{/pix}}</span>
-                                                 </a>
-                                             {{/anchor}}
-                                             {{$tooltip}}{{#str}} markallread {{/str}}{{/tooltip}}
-                                         {{/ core/hover_tooltip }}
-                                         {{< core/hover_tooltip }}
-                                             {{$anchor}}
-                                                 <a href="{{{urls.preferences}}}"
-                                                     title="{{#str}} notificationpreferences, message {{/str}}">
-                                                     {{#pix}} i/settings, core, {{#str}} notificationpreferences, message {{/str}} {{/pix}}
-                                                 </a>
-                                             {{/anchor}}
-                                             {{$tooltip}}{{#str}} notificationpreferences, message {{/str}}{{/tooltip}}
-                                         {{/ core/hover_tooltip }}
-                                     {{/headeractions}}
+                {{{siteadminlink}}}
 
-                                     {{$content}}
-                                         <div class="all-notifications"
-                                             data-region="all-notifications"
-                                             role="log"
-                                             aria-busy="false"
-                                             aria-atomic="false"
-                                             aria-relevant="additions"></div>
-                                         <div class="empty-message" tabindex="0" data-region="empty-message">{{#str}} nonotifications, message {{/str}}</div>
-                                     {{/content}}
-                                 {{/ core/popover_region }}
-                                 {{#js}}
-                                 require(['jquery', 'message_popup/notification_popover_controller'], function($, controller) {
-                                     var container = $('#nav-notification-popover-container');
-                                     var controller = new controller(container);
-                                     controller.registerEventListeners();
-                                     controller.registerListNavigationEventListeners();
-                                 });
-                                 {{/js}}
+                <li class="c-nav-primary__item">
+                    <button class="c-nav-primary__link" data-expands="#item-5-sub" data-popup="" role="button" aria-expanded="false" aria-haspopup="true">Profile</button>
+                      <nav class="c-nav-primary__sub  jsNavSub" id="item-5-sub" role="group" aria-label="sub navigation menu">
 
+                          <div class="o-wrapper">
 
-                              </div><!-- /.o-layout__item -->
-                          </div><!-- /.o-layout -->
+                              <div class="o-layout">
 
-                      </div><!-- /.o-wrapper -->
+                                  <div class="o-layout__item  u-6/12@lg">
+                                      <ul class="c-nav-primary__sub-links">
+                                          <li>
+                                              <a href="#0">{{{output.user_menu}}}</a>
+                                          </li>
+                                      </ul>
 
-                  </nav>
-            </li>
+                                  </div><!-- /.o-layout__item -->
+                              </div><!-- /.o-layout -->
 
-            {{{siteadminlink}}}
+                          </div><!-- /.o-wrapper -->
 
-            <li class="c-nav-primary__item">
-                <button class="c-nav-primary__link" data-expands="#item-5-sub" data-popup="" role="button" aria-expanded="false" aria-haspopup="true">Profile</button>
-                  <nav class="c-nav-primary__sub  jsNavSub" id="item-5-sub" role="group" aria-label="sub navigation menu">
+                      </nav>
+                </li>
 
-                      <div class="o-wrapper">
+                  <li class="c-nav-primary__item">
+                    <a href="#0" class="c-nav-primary__link">Sign Out</a>
+                  </li>
 
-                          <div class="o-layout">
-
-                              <div class="o-layout__item  u-6/12@lg">
-                                  <ul class="c-nav-primary__sub-links">
-                                      <li>
-                                          <a href="#0">{{{output.user_menu}}}</a>
-                                      </li>
-                                  </ul>
-
-                              </div><!-- /.o-layout__item -->
-                          </div><!-- /.o-layout -->
-
-                      </div><!-- /.o-wrapper -->
-
-                  </nav>
-            </li>
-
-              <li class="c-nav-primary__item">
-                <a href="#0" class="c-nav-primary__link">Sign Out</a>
-              </li>
-
-            </ul>
-          </nav>
+                </ul>
+              </nav>
+           </div>
 
      </div>
 

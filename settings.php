@@ -41,9 +41,9 @@ if ($ADMIN->fulltree) {
     $page->add($setting);
 
     // Sub logo file setting.
-    $name = 'theme_nhsla_nightingale/sublogo';
-    $title = get_string('sublogo', 'theme_nhsla_nightingale');
-    $description = get_string('sublogodesc', 'theme_nhsla_nightingale');
+    $name = 'theme_nightingale/sublogo';
+    $title = get_string('sublogo', 'theme_nightingale');
+    $description = get_string('sublogodesc', 'theme_nightingale');
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'sublogo');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
@@ -76,18 +76,18 @@ if ($ADMIN->fulltree) {
     $page->add($setting);
 
     // Partnership Info setting.
-    $name = 'theme_nhsla_nightingale/partnershipinfo';
-    $title = get_string('partnershipinfo', 'theme_nhsla_nightingale');
-    $description = get_string('partnershipinfodesc', 'theme_nhsla_nightingale');
+    $name = 'theme_nightingale/partnershipinfo';
+    $title = get_string('partnershipinfo', 'theme_nightingale');
+    $description = get_string('partnershipinfodesc', 'theme_nightingale');
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
     // Ribbons setting.
-    $name = 'theme_nhsla_nightingale/ribbons';
-    $title = get_string('ribbons', 'theme_nhsla_nightingale');
-    $description = get_string('ribbonsdesc', 'theme_nhsla_nightingale');
+    $name = 'theme_nightingale/ribbons';
+    $title = get_string('ribbons', 'theme_nightingale');
+    $description = get_string('ribbonsdesc', 'theme_nightingale');
     $default = 'none';
     $choices = array('none' => 'None', 'alpha' => 'Alpha', 'beta' => 'Beta');
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
