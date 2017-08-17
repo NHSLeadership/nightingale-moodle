@@ -35,7 +35,7 @@ if ($navdraweropen) {
     $extraclasses[] = 'drawer-open-left';
 }
 // Get the Theme settings. Display Footnote in footer
-$themesettings = theme_nhsla_nightingale_get_html_for_settings($OUTPUT, $PAGE);
+$themesettings = theme_nightingale_get_html_for_settings($OUTPUT, $PAGE);
 
 $bodyattributes = $OUTPUT->body_attributes($extraclasses);
 $blockshtml = $OUTPUT->blocks('side-pre');
