@@ -15,9 +15,9 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * A maintenance layout for the nhsla_nightingale theme.
+ * A maintenance layout for the nightingale theme.
  *
- * @package   theme_nhsla_nightingale
+ * @package   theme_nightingale
  */
 
 defined('MOODLE_INTERNAL') || die();
@@ -29,4 +29,4 @@ $templatecontext = [
     'output' => $OUTPUT
 ];
 
-echo $OUTPUT->render_from_template('theme_nhsla_nightingale/maintenance', $templatecontext);
+echo $OUTPUT->render_from_template('theme_nightingale/maintenance', $templatecontext);

@@ -17,10 +17,10 @@
 /**
  * Overriden gradereport_history renderer.
  *
- * @package    theme_nhsla_nightingale
+ * @package    theme_nightingale
  */
 
-namespace theme_nhsla_nightingale\output;
+namespace theme_nightingale\output;
 defined('MOODLE_INTERNAL') || die();
 
 use gradereport_history\output\user_button;
@@ -28,7 +28,7 @@ use gradereport_history\output\user_button;
 /**
  * Overriden gradereport_history renderer.
  *
- * @package    theme_nhsla_nightingale
+ * @package    theme_nightingale
  */
 class gradereport_history_renderer extends \gradereport_history\output\renderer {
 

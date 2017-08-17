@@ -17,10 +17,10 @@
 /**
  * Overriden block settings renderer.
  *
- * @package    theme_nhsla_nightingale
+ * @package    theme_nightingale
  */
 
-namespace theme_nhsla_nightingale\output;
+namespace theme_nightingale\output;
 defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->dirroot . '/blocks/settings/renderer.php');
@@ -30,7 +30,7 @@ use moodle_url;
 /**
  * Overriden block settings renderer.
  *
- * @package    theme_nhsla_nightingale
+ * @package    theme_nightingale
  */
 class block_settings_renderer extends \block_settings_renderer {
 

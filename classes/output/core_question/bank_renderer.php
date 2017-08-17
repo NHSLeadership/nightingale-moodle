@@ -17,10 +17,10 @@
 /**
  * Question renderer.
  *
- * @package    theme_nhsla_nightingale
+ * @package    theme_nightingale
  */
 
-namespace theme_nhsla_nightingale\output\core_question;
+namespace theme_nightingale\output\core_question;
 defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->dirroot . '/' . $CFG->admin . '/renderer.php');
@@ -28,7 +28,7 @@ require_once($CFG->dirroot . '/' . $CFG->admin . '/renderer.php');
 /**
  * Question renderer class.
  *
- * @package    theme_nhsla_nightingale
+ * @package    theme_nightingale
  */
 class bank_renderer extends \core_question_bank_renderer {
 

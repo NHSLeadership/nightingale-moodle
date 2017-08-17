@@ -17,7 +17,7 @@
 /**
  * A one column layout for the boost theme.
  *
- * @package   theme_nhsla_nightingale
+ * @package   theme_nightingale
  */
 
 defined('MOODLE_INTERNAL') || die();
@@ -30,5 +30,5 @@ $templatecontext = [
     'bodyattributes' => $bodyattributes
 ];
 
-echo $OUTPUT->render_from_template('theme_nhsla_nightingale/columns1', $templatecontext);
+echo $OUTPUT->render_from_template('theme_nightingale/columns1', $templatecontext);
 
