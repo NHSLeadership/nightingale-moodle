@@ -18,13 +18,13 @@
  * Autoprefixer.
  *
  * This autoprefixer has been developed to satisfy the basic needs of the
- * theme nhsla_nightingale. We do not recommend
+ * theme nightingale. We do not recommend
  * that this tool is shared, nor used outside of this theme.
  *
- * @package    theme_nhsla_nightingale
+ * @package    theme_nightingale
  */
 
-namespace theme_nhsla_nightingale;
+namespace theme_nightingale;
 defined('MOODLE_INTERNAL') || die();
 
 use Sabberworm\CSS\CSSList\CSSList;
@@ -52,7 +52,7 @@ use Sabberworm\CSS\Value\ValueList;
  *
  * Very basic implementation covering simple needs for Bootstrap 4.
  *
- * @package    theme_nhsla_nightingale
+ * @package    theme_nightingale
  */
 class autoprefixer {
 

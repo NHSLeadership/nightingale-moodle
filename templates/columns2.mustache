@@ -15,11 +15,11 @@
     along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 }}
 {{!
-    @template theme_nhsla_nightingale/columns2
+    @template theme_nightingale/columns2
 
     Admin time setting template.
 
-    nhsla_nightingale 2 column layout template.
+    nightingale 2 column layout template.
 
     Context variables required for this template:
     * sitename - The name of the site
@@ -63,7 +63,7 @@
 
      {{{ output.standard_top_of_body_html }}}
 
-    {{>theme_nhsla_nightingale/header}}
+    {{>theme_nightingale/header}}
 
     <div class="o-wrapper">
         <div id="region-main-box" class="col-xs-12">
@@ -100,7 +100,7 @@
                 <nav class="nav navbar-nav hidden-lg-up">
                     {{# output.custom_menu_flat }}
                         <ul class="list-unstyled p-t-1">
-                            {{> theme_nhsla_nightingale/custom_menu_footer }}
+                            {{> theme_nightingale/custom_menu_footer }}
                         </ul>
                     {{/ output.custom_menu_flat }}
                 </nav>
@@ -120,8 +120,8 @@
 </body>
 </html>
 {{#js}}
-require(['theme_nhsla_nightingale/loader']);
-require(['theme_nhsla_nightingale/drawer'], function(mod) {
+require(['theme_nightingale/loader']);
+require(['theme_nightingale/drawer'], function(mod) {
     mod.init();
 });
 {{/js}}

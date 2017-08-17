@@ -15,9 +15,9 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * A two column layout for the nhsla_nightingale theme.
+ * A two column layout for the nightingale theme.
  *
- * @package   theme_nhsla_nightingale
+ * @package   theme_nightingale
  */
 
 defined('MOODLE_INTERNAL') || die();
@@ -41,9 +41,11 @@ $extraclasses = [];
 if ($navdraweropen) {
     $extraclasses[] = 'drawer-open-left';
 }
+
 // Get the Theme settings. Display Footnote in footer
-$themesettings = theme_nhsla_nightingale_get_html_for_settings($OUTPUT, $PAGE);
-$siteadminhtml = get_siteadmin_link();
+$themesettings = theme_nightingale_get_html_for_settings($OUTPUT, $PAGE);
+$siteadminhtml = theme_nightingale_get_siteadmin_link();
+
 
 $bodyattributes = $OUTPUT->body_attributes($extraclasses);
 $blockshtml = $OUTPUT->blocks('side-pre');
@@ -68,5 +70,5 @@ $templatecontext = [
 ];
 
 $templatecontext['flatnavigation'] = $PAGE->flatnav;
-echo $OUTPUT->render_from_template('theme_nhsla_nightingale/columns2', $templatecontext);
+echo $OUTPUT->render_from_template('theme_nightingale/columns2', $templatecontext);
 

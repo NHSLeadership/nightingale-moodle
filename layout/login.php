@@ -17,9 +17,9 @@
 defined('MOODLE_INTERNAL') || die();
 
 /**
- * A login page layout for the nhsla_nightingale theme.
+ * A login page layout for the nightingale theme.
  *
- * @package   theme_nhsla_nightingale
+ * @package   theme_nightingale
  */
 
 $bodyattributes = $OUTPUT->body_attributes();
@@ -30,5 +30,5 @@ $templatecontext = [
     'bodyattributes' => $bodyattributes
 ];
 
-echo $OUTPUT->render_from_template('theme_nhsla_nightingale/login', $templatecontext);
+echo $OUTPUT->render_from_template('theme_nightingale/login', $templatecontext);
 

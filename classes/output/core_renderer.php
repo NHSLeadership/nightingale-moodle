@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-namespace theme_nhsla_nightingale\output;
+namespace theme_nightingale\output;
 
 use coding_exception;
 use html_writer;
@@ -40,7 +40,7 @@ defined('MOODLE_INTERNAL') || die;
 /**
  * Renderers to align Moodle's HTML with that expected by Bootstrap
  *
- * @package    theme_nhsla_nightingale
+ * @package    theme_nightingale
  */
 
 class core_renderer extends \core_renderer {

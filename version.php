@@ -15,13 +15,13 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * NHSLA_Nightingale.
+ * Nightingale.
  *
- * @package    theme_nhsla_nightingale
+ * @package    theme_nightingale
  */
 
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->version   = 2017051500;
 $plugin->requires  = 2017050500;
-$plugin->component = 'theme_nhsla_nightingale';
+$plugin->component = 'theme_nightingale';

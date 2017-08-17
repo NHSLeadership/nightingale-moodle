@@ -17,7 +17,7 @@
 /**
  * An embedded layout for the boost theme.
  *
- * @package   theme_nhsla_nightingale
+ * @package   theme_nightingale
  */
 
 defined('MOODLE_INTERNAL') || die();
@@ -27,4 +27,4 @@ $templatecontext = [
     'output' => $OUTPUT
 ];
 
-echo $OUTPUT->render_from_template('theme_nhsla_nightingale/embedded', $templatecontext);
+echo $OUTPUT->render_from_template('theme_nightingale/embedded', $templatecontext);

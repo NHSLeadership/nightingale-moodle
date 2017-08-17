@@ -15,9 +15,9 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * A secure layout for the nhsla_nightingale theme.
+ * A secure layout for the nightingale theme.
  *
- * @package   theme_nhsla_nightingale
+ * @package   theme_nightingale
  */
 
 defined('MOODLE_INTERNAL') || die();
@@ -34,5 +34,5 @@ $templatecontext = [
     'hasblocks' => $hasblocks
 ];
 
-echo $OUTPUT->render_from_template('theme_nhsla_nightingale/secure', $templatecontext);
+echo $OUTPUT->render_from_template('theme_nightingale/secure', $templatecontext);
 

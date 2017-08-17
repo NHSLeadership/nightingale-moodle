@@ -18,10 +18,10 @@
 /**
  * Overriden core maintenance renderer.
  *
- * @package    theme_nhsla_nightingale
+ * @package    theme_nightingale
  */
 
-namespace theme_nhsla_nightingale\output;
+namespace theme_nightingale\output;
 defined('MOODLE_INTERNAL') || die();
 
 use coding_exception;
@@ -32,7 +32,7 @@ use stdClass;
 /**
  * The maintenance renderer.
  *
- * @package    theme_nhsla_nightingale
+ * @package    theme_nightingale
  */
 class core_renderer_maintenance extends core_renderer {
 

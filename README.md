@@ -1,7 +1,7 @@
-Description of NHSLA Nightingale import into Moodle
+Description of Nightingale theme import into Moodle
 
 
-# NHSLA Nightingale Theme
+# Nightingale Theme
 Moodle based theme cloned from Boost but re-styled and templated completely using core Nightingale and Front-End framework designs from NHS Leadership Academy
 
 ## Installation instructions
@@ -11,11 +11,11 @@ This guide assumes you have a moodle install on your machine already.
 
 ### Using Git
 - If you want to get a copy of an existing theme repository (from [github.com](https://github.com)) – the command you need is `git clone`.
-- ```git clone git@github.com:NHSLeadership/theme_nhsla_nightingale.git```
+- ```git clone git@github.com:NHSLeadership/moodle-theme_nightingale.git```
 - This would install the new theme directory inside your ```theme/``` folder
 
 ### Download Theme
-- If not via ```git clone```, you can simply download the folder from [here](https://github.com:NHSLeadership/theme_nhsla_nightingale.git)
+- If not via ```git clone```, you can simply download the folder from [here](https://github.com:NHSLeadership/moodle-theme_nightingale.git)
 - Place it in your ```theme/``` folder
 - Login as site admin on your Moodle install
 - Go to Site Administration > Notifications
@@ -44,7 +44,7 @@ You should be all installed and ready to go!
 
 - Login as site admin on your Moodle install
 - Go to Site Administration > Appearance > Theme > Theme Selector > Change Theme
-- Select **NHSLA Nightingale** from the list > Click on Use Theme
+- Select **Nightingale** from the list > Click on Use Theme
 - Change settings if any for the new theme or leave them as is and click on Save Changes
 
 That's it. The new theme should now reflect on your Moodle site!

@@ -1,5 +1,5 @@
 {{!
-@template theme_nhsla_nightingale/core_form/element-radio-online
+@template theme_nightingale/core_form/element-radio-online
 
    Example context (json):
    {
@@ -33,7 +33,7 @@
 </span>
 {{^element.frozen}}
 {{#js}}
-require(['theme_nhsla_nightingale/form-display-errors'], function(module) {
+require(['theme_nightingale/form-display-errors'], function(module) {
     module.enhance({{#quote}}{{element.id}}{{/quote}});
 });
 {{/js}}
