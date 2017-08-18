@@ -1,6 +1,5 @@
 Description of Nightingale theme import into Moodle
 
-
 # Nightingale Theme
 Moodle based theme cloned from Boost but re-styled and templated completely using core Nightingale and Front-End framework designs from NHS Leadership Academy
 
