@@ -23,7 +23,7 @@
 
     <div class="o-wrapper  c-page-header__inner">
 
-          <a href="" class="c-page-header__lockup">
+          <a href="{{{config.wwwroot}}}/my" class="c-page-header__lockup">
             <img src="{{{ logosrc }}}" alt="NHS" width="204" height="62" class="c-page-header__logo">
           </a>
 
@@ -35,11 +35,11 @@
 
                 <ul class="c-nav-primary__list" id="jsNav">
 
-                  <li class="c-nav-primary__item">
+                  <li class="c-nav-primary__item c-nav-primary__align">
                     <a href="{{{config.wwwroot}}}/my" class="c-nav-primary__link">Dashboard</a>
                   </li>
 
-                  <li class="c-nav-primary__item">
+                  <li class="c-nav-primary__item c-nav-primary__align">
                     <button class="c-nav-primary__link" data-expands="#item-2-sub" data-popup="" role="button" aria-expanded="false" aria-haspopup="true">Programmes</button>
                         <nav class="c-nav-primary__sub  jsNavSub" id="item-2-sub" role="group" aria-label="sub navigation menu">
 
@@ -48,25 +48,11 @@
                                 <div class="o-layout">
                                     <div class="o-layout__item  u-6/12@lg">
 
-                                        <h4 class="u-margin-bottom-small">Programmes we offer...</h4>
-
-                                    </div><!-- /.o-layout__item -->
-                                    <div class="o-layout__item  u-6/12@lg">
-                                        {{# flatnavigation }}
-                                            {{#action}}
-                                                {{^is_section}}
-                                                {{^showdivider}}
-                                                {{#get_indent}}
                                                 <ul class="c-nav-primary__sub-links">
                                                     <li>
-                                                        <a href="{{{action}}}" data-key="{{key}}">{{{text}}}</a>
+                                                        {{{availablecourses}}}
                                                     </li>
                                                 </ul>
-                                                {{/get_indent}}
-                                                {{/showdivider}}
-                                                {{/is_section}}
-                                            {{/action}}
-                                        {{/ flatnavigation }}
                                     </div><!-- /.o-layout__item -->
                                 </div><!-- /.o-layout -->
 
@@ -79,31 +65,13 @@
 
                 {{{siteadminlink}}}
 
-                <li class="c-nav-primary__item">
-                    <button class="c-nav-primary__link" data-expands="#item-5-sub" data-popup="" role="button" aria-expanded="false" aria-haspopup="true">Profile</button>
-                      <nav class="c-nav-primary__sub  jsNavSub" id="item-5-sub" role="group" aria-label="sub navigation menu">
 
-                          <div class="o-wrapper">
-
-                              <div class="o-layout">
-
-                                  <div class="o-layout__item  u-6/12@lg">
-                                      <ul class="c-nav-primary__sub-links">
-                                          <li>
-                                              <a href="#0">{{{output.user_menu}}}</a>
-                                          </li>
-                                      </ul>
-
-                                  </div><!-- /.o-layout__item -->
-                              </div><!-- /.o-layout -->
-
-                          </div><!-- /.o-wrapper -->
-
-                      </nav>
+                <li class="c-nav-primary__item c-nav-primary__align">
+                    <a href="{{{profileurl}}}" class="c-btn c-btn--primary c-btn--natural c-page-header__btns" id="c-page-header__profilebtn">Profile</a>
                 </li>
 
-                  <li class="c-nav-primary__item">
-                    <a href="#0" class="c-nav-primary__link">Sign Out</a>
+                  <li class="c-nav-primary__item c-nav-primary__align">
+                    <a href="{{{logouturl}}}" class="c-btn c-btn--secondary c-btn--natural c-page-header__btns" id="c-page-header__logoutbtn">Signout</a>
                   </li>
 
                 </ul>

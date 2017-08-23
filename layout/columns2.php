@@ -43,8 +43,12 @@ if ($navdraweropen) {
 }
 
 // Get the Theme settings. Display Footnote in footer
+$courserenderer = $PAGE->get_renderer('core', 'course');
 $themesettings = theme_nightingale_get_html_for_settings($OUTPUT, $PAGE);
 $siteadminhtml = theme_nightingale_get_siteadmin_link();
+$logout_url = new moodle_url($CFG->httpswwwroot.'/login/logout.php', array('sesskey'=>sesskey(),'loginpage'=>1));
+$profile_url = new moodle_url('/user/profile.php', array('id'=>$USER->id));
+$availablecourseshtml = $courserenderer->frontpage_available_courses();
 
 
 $bodyattributes = $OUTPUT->body_attributes($extraclasses);
@@ -52,15 +56,18 @@ $blockshtml = $OUTPUT->blocks('side-pre');
 $hasblocks = strpos($blockshtml, 'data-block=') !== false;
 $regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
 $templatecontext = [
-    'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
-    'output' => $OUTPUT,
-    'config' => $CFG,
-    'footnote' => $themesettings->footnote,
+    'sitename'  => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
+    'output'    => $OUTPUT,
+    'config'    => $CFG,
+    'footnote'  => $themesettings->footnote,
     'partnershipinfo' => $themesettings->partnershipinfo,
-    'ribbonhtml'  => $themesettings->ribbonhtml,
-    'logosrc' => $themesettings->logosrc,
-    'sublogosrc'  => $themesettings->sublogosrc,
+    'ribbonhtml'=> $themesettings->ribbonhtml,
+    'logosrc'   => $themesettings->logosrc,
+    'sublogosrc'=> $themesettings->sublogosrc,
     'siteadminlink' => $siteadminhtml,
+    'logouturl' => $logout_url,
+    'profileurl'=> $profile_url,
+    'availablecourses' => $availablecourseshtml,
     'sidepreblocks' => $blockshtml,
     'hasblocks' => $hasblocks,
     'bodyattributes' => $bodyattributes,

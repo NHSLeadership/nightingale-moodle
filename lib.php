@@ -231,13 +231,23 @@ function theme_nightingale_get_ribbonhtml($ribbon) {
  */
 function theme_nightingale_get_siteadmin_link() {
 
-  global $USER, $CFG;
+  global $USER, $CFG, $PAGE;
 
   $siteadminhtml = "";
+
+  $contacturl = '';
+  if(!empty($PAGE->theme->settings->contacturl)) {
+    $contacturl = $PAGE->theme->settings->contacturl;
+  }
+
   if(is_siteadmin($USER->id)) {
 
-    $siteadminhtml = "<li class='c-nav-primary__item'>
+    $siteadminhtml = "<li class='c-nav-primary__item c-nav-primary__align'>
                         <a href='".$CFG->wwwroot."/admin/search.php' class='c-nav-primary__link'>Site Admin</a>
+                      </li>";
+  } else {
+    $siteadminhtml = "<li class='c-nav-primary__item c-nav-primary__align'>
+                        <a href='".$contacturl."' class='c-nav-primary__link'>Contact</a>
                       </li>";
   }
 
