@@ -254,3 +254,22 @@ function theme_nightingale_get_siteadmin_link() {
   return $siteadminhtml;
 
 }
+
+/**
+ * Gets available courses to display in header navigation
+ *
+ * @param moodle_page $page
+ * @return string
+ */
+function theme_nightingale_get_course_navigation(moodle_page $page) {
+
+  $courserenderer = $page->get_renderer('core', 'course');
+
+  $availablecourseshtml = $courserenderer->frontpage_available_courses();
+
+  if(empty($availablecourseshtml)) {
+    $availablecourseshtml = "No courses available";
+  }
+
+  return $availablecourseshtml;
+}

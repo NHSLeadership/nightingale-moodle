@@ -43,13 +43,11 @@ if ($navdraweropen) {
 }
 
 // Get the Theme settings. Display Footnote in footer
-$courserenderer = $PAGE->get_renderer('core', 'course');
 $themesettings = theme_nightingale_get_html_for_settings($OUTPUT, $PAGE);
 $siteadminhtml = theme_nightingale_get_siteadmin_link();
 $logout_url = new moodle_url($CFG->httpswwwroot.'/login/logout.php', array('sesskey'=>sesskey(),'loginpage'=>1));
 $profile_url = new moodle_url('/user/profile.php', array('id'=>$USER->id));
-$availablecourseshtml = $courserenderer->frontpage_available_courses();
-
+$availablecourseshtml = theme_nightingale_get_course_navigation($PAGE);
 
 $bodyattributes = $OUTPUT->body_attributes($extraclasses);
 $blockshtml = $OUTPUT->blocks('side-pre');
