@@ -1,0 +1,40 @@
+/*
+ ** TO-DO: Few bits with this comment to be removed once implemented in Core Nightingale
+ */
+
+[id="c-page-header__profilebtn"] {
+  background-color: $color-links;
+}
+
+a:visited[id="c-page-header__profilebtn"] {
+  color: $color-text-bg;
+}
+
+.c-btn--secondary.c-btn--secondary[id="c-page-header__logoutbtn"] {
+  color: $color-links;
+}
+
+.c-nav-primary__item.c-nav-primary__align {
+  vertical-align: middle;
+}
+
+.c-nav-primary__sub-links li .content {
+  display: none;
+}
+
+ul.c-nav-primary__sub-links li .courses.frontpage-course-list-all a {
+  font-size: 1rem;
+}
+
+.c-nav-primary__sub-links  h3.coursename {
+  line-height: 0.5;
+}
+
+/**
+ * Natural buttons only take up as little content as they need to, with one
+ * character’s worth of padding either side.
+ */
+.c-btn--natural {
+  padding-right: 1ch;
+  padding-left: 1ch;
+}

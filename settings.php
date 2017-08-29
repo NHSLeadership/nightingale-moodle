@@ -40,6 +40,15 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
+    // Sub logo file setting.
+    $name = 'theme_nightingale/sublogo';
+    $title = get_string('sublogo', 'theme_nightingale');
+    $description = get_string('sublogodesc', 'theme_nightingale');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'sublogo');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+
     // Show site name along with small logo.
     $name = 'theme_nightingale/sitename';
     $title = get_string('sitename', 'theme_nightingale');
@@ -63,6 +72,34 @@ if ($ADMIN->fulltree) {
     $description = get_string('footnotedesc', 'theme_nightingale');
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    // Partnership Info setting.
+    $name = 'theme_nightingale/partnershipinfo';
+    $title = get_string('partnershipinfo', 'theme_nightingale');
+    $description = get_string('partnershipinfodesc', 'theme_nightingale');
+    $default = '';
+    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    // Ribbons setting.
+    $name = 'theme_nightingale/ribbons';
+    $title = get_string('ribbons', 'theme_nightingale');
+    $description = get_string('ribbonsdesc', 'theme_nightingale');
+    $default = 'none';
+    $choices = array('none' => 'None', 'alpha' => 'Alpha', 'beta' => 'Beta');
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    // Contact URL setting
+    $name = 'theme_nightingale/contacturl';
+    $title = get_string('contacturl', 'theme_nightingale');
+    $description = get_string('contacturldesc', 'theme_nightingale');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 

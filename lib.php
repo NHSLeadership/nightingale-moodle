@@ -147,5 +147,129 @@ function theme_nightingale_get_html_for_settings(renderer_base $output, moodle_p
         $return->footnote = '<p class="c-page-footer__smallprint"><small>'.format_string($page->theme->settings->footnote).'</small></p>';
     }
 
+    $return->partnershipinfo = '';
+    if (!empty($page->theme->settings->partnershipinfo)) {
+      $return->partnershipinfo = '<div class="c-ribbon  c-ribbon--expandable">
+                                    <div class="o-wrapper">
+                                        <details class="c-ribbon__body">
+                                            <summary><b>In partnership with:</b> '.format_string($page->theme->settings->partnershipinfo).'</summary>
+                                        </details>
+                                    </div>
+                                  </div>';
+    }
+
+    $return->ribbons = '';
+    $return->ribbonhtml = '';
+    if(!empty($page->theme->settings->ribbons)) {
+        $return->ribbonhtml = theme_nightingale_get_ribbonhtml($page->theme->settings->ribbons);
+    }
+
+    $return->logosrc = '';
+    if (!empty($page->theme->settings->logo)) {
+      $return->logosrc = $page->theme->setting_file_url('logo', 'logo');
+    } else if(!empty($page->theme->settings->smalllogo)) {
+      $return->logosrc = $page->theme->setting_file_url('smalllogo', 'smalllogo');
+    }
+
+    $return->sublogosrc = '';
+    if (!empty($page->theme->settings->sublogo)) {
+      $return->sublogosrc = $page->theme->setting_file_url('sublogo', 'sublogo');
+    }
+
     return $return;
+}
+
+/**
+ * Gets Alpha/Beta/Live ribbon dependent upon Theme setting
+ *
+ * @param $ribbon
+ * @return string
+ */
+function theme_nightingale_get_ribbonhtml($ribbon) {
+
+  $ribbonhtml = '';
+
+  if(!empty($ribbon)) {
+
+    switch($ribbon) {
+
+      case 'none':
+        $ribbonhtml = '';
+        break;
+
+      case 'beta':
+        $ribbonhtml = '<div class="c-ribbon  c-ribbon--beta">
+                        <div class="o-wrapper">
+                            <strong class="c-ribbon__tag">Beta</strong>
+                            <strong class="c-ribbon__body">This site is in beta stage - your <a href="#0">feedback</a> will help us to improve it.</strong>
+                        </div>
+                       </div>';
+        break;
+
+      case 'alpha':
+        $ribbonhtml = '<div class="c-ribbon  c-ribbon--alpha">
+                        <div class="o-wrapper">
+                            <strong class="c-ribbon__tag">Alpha</strong>
+                            <strong class="c-ribbon__body">This site is in alpha stage - your <a href="#0">feedback</a> will help us to improve it.</strong>
+                        </div>
+                       </div>';
+        break;
+
+    }
+
+  }
+
+  return $ribbonhtml;
+
+}
+
+
+/**
+ * Gets Site admin Link to show in Header Nav
+ *
+ * @return string
+ */
+function theme_nightingale_get_siteadmin_link() {
+
+  global $USER, $CFG, $PAGE;
+
+  $siteadminhtml = "";
+
+  $contacturl = '';
+  if(!empty($PAGE->theme->settings->contacturl)) {
+    $contacturl = $PAGE->theme->settings->contacturl;
+  }
+
+  if(is_siteadmin($USER->id)) {
+
+    $siteadminhtml = "<li class='c-nav-primary__item c-nav-primary__align'>
+                        <a href='".$CFG->wwwroot."/admin/search.php' class='c-nav-primary__link'>Site Admin</a>
+                      </li>";
+  } else {
+    $siteadminhtml = "<li class='c-nav-primary__item c-nav-primary__align'>
+                        <a href='".$contacturl."' class='c-nav-primary__link'>Contact</a>
+                      </li>";
+  }
+
+  return $siteadminhtml;
+
+}
+
+/**
+ * Gets available courses to display in header navigation
+ *
+ * @param moodle_page $page
+ * @return string
+ */
+function theme_nightingale_get_course_navigation(moodle_page $page) {
+
+  $courserenderer = $page->get_renderer('core', 'course');
+
+  $availablecourseshtml = $courserenderer->frontpage_available_courses();
+
+  if(empty($availablecourseshtml)) {
+    $availablecourseshtml = "No courses available";
+  }
+
+  return $availablecourseshtml;
 }
