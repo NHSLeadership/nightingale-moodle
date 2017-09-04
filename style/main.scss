@@ -1,3 +1,4 @@
 @import "settings.pre-config";
 @import "nightingale/main";
 @import "middleware/middleware.header";
+@import "middleware/middleware.breadcrumb";

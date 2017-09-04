@@ -1,0 +1,29 @@
+/* ==========================================================================
+   #BREADCRUMBS
+   ========================================================================== */
+/**
+ * Unfortunately, Moodle provides Breadcrumbs that we cannot actually get access to
+ * in order to add new classes. Here we’re just remapping its selector onto
+ * the cleaner Nightingale ones.
+ */
+
+div.breadcrumb-nav nav{
+  @extend .c-breadcrumb;
+}
+
+ol.breadcrumb {
+  @extend .c-breadcrumb__list;
+}
+
+li.breadcrumb-item {
+  @extend .c-breadcrumb__item;
+}
+
+li.breadcrumb-item a {
+  @extend .c-breadcrumb__link;
+}
+
+ol.breadcrumb>li:first-child a {
+  @extend .c-breadcrumb__link;
+  @extend .c-sprite, .c-sprite--home;
+}
