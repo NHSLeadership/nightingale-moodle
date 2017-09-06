@@ -73,6 +73,8 @@ class core_renderer extends \core_renderer {
 
         // Moved breadcrumbs before heading as per Nightingale design
         $pageheadingbutton = $this->page_heading_button();
+
+        $html = "";
         if (empty($PAGE->layout_options['nonavbar'])) {
           $html = html_writer::start_div('clearfix w-100 pull-xs-left', array('id' => 'page-navbar'));
           $html .= html_writer::tag('div', $this->navbar(), array('class' => 'breadcrumb-nav'));
