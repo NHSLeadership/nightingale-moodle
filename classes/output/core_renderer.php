@@ -71,7 +71,19 @@ class core_renderer extends \core_renderer {
     public function full_header() {
         global $PAGE;
 
-        $html = html_writer::start_tag('header', array('id' => 'page-header', 'class' => 'row'));
+        // Moved breadcrumbs before heading as per Nightingale design
+        $pageheadingbutton = $this->page_heading_button();
+
+        $html = "";
+        if (empty($PAGE->layout_options['nonavbar'])) {
+          $html = html_writer::start_div('clearfix w-100 pull-xs-left', array('id' => 'page-navbar'));
+          $html .= html_writer::tag('div', $this->navbar(), array('class' => 'breadcrumb-nav'));
+          $html .= html_writer::end_div();
+          $html .= html_writer::start_tag('hr', array('class' => 'c-divider'));
+        }
+
+        // Heading with course or page headers
+        $html .= html_writer::start_tag('header', array('id' => 'page-header', 'class' => 'row'));
         $html .= html_writer::start_div('col-xs-12 p-a-1');
         $html .= html_writer::start_div('card');
         $html .= html_writer::start_div('card-block');
@@ -79,15 +91,6 @@ class core_renderer extends \core_renderer {
         $html .= html_writer::start_div('pull-xs-left');
         $html .= $this->context_header();
         $html .= html_writer::end_div();
-        $pageheadingbutton = $this->page_heading_button();
-        if (empty($PAGE->layout_options['nonavbar'])) {
-            $html .= html_writer::start_div('clearfix w-100 pull-xs-left', array('id' => 'page-navbar'));
-            $html .= html_writer::tag('div', $this->navbar(), array('class' => 'breadcrumb-nav'));
-            $html .= html_writer::div($pageheadingbutton, 'breadcrumb-button pull-xs-right');
-            $html .= html_writer::end_div();
-        } else if ($pageheadingbutton) {
-            $html .= html_writer::div($pageheadingbutton, 'breadcrumb-button nonavbar pull-xs-right');
-        }
         $html .= html_writer::tag('div', $this->course_header(), array('id' => 'course-header'));
         $html .= html_writer::end_div();
         $html .= html_writer::end_div();
