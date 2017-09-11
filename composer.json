@@ -1,8 +1,11 @@
 {
-  "name": "ishanivardhan/theme_nightingale",
+  "name": "NHSLeadership/moodle-theme_nightingale",
   "description": "Basic Nightingale theme, cloned from Boost but re-styled and templated using Core Nightingale & Front-end framework designs from NHS Leadership Academy",
   "type": "moodle-theme",
   "require": {
     "composer/installers": "^1.3"
+  },
+  "extra": {
+    "installer-name": "nightingale"
   }
 }
