@@ -1,0 +1,118 @@
+/* ==========================================================================
+   #FORUMS
+   ========================================================================== */
+/**
+ * Unfortunately, Moodle provides Forums that we cannot actually get access to
+ * in order to add new classes. Here we’re just remapping its selector onto
+ * the cleaner Nightingale ones.
+ */
+
+// Add new Forum button
+.singlebutton.forumaddnew button {
+  @extend .c-btn;
+  @extend .c-btn--submit;
+  @extend .c-btn--full;
+}
+
+// Forum Search
+.forumsearch {
+  float: right;
+}
+
+.forumsearch button {
+  @extend .c-sprite;
+  @extend .c-sprite--magnifying-glass-rev;
+  float: right;
+}
+
+.forumsearch input > text {
+  @extend .c-form-input;
+}
+
+
+
+// Removing border of first post for every forum so it could stand out
+.forumpost {
+  border: none;
+}
+
+.forumpost .row .topic, .forumpost .row .content-mask, .forumpost .row .options {
+  margin-left: 0px;
+}
+
+// Hiding Avatar image from each forum post/thread as not required for v1.0
+.left.picture {
+  display: none;
+}
+
+// Making first post thread topic/subject bolder
+.topic.firstpost.starter .subject {
+  font-weight: 700;
+  margin-top: $global-spacing-unit;
+}
+
+// Leaving slight gap between content & forum post title for First post
+.forumpost.clearfix.firstpost.starter .content {
+  margin-top: $global-spacing-unit-tiny;
+}
+
+// Hiding forum post title for each subsequent replies
+.indent .forumpost .subject {
+  display: none;
+}
+
+// Removing indentation of forum post content
+.forumpost .row .left {
+  width: 0px;
+}
+
+/*
+ * Mapping each forum post styles after the First post with Nightingale classes
+ */
+.indent {
+  @extend .c-comments;
+}
+
+.forumpost .author {
+  @extend .c-comment__author;
+}
+
+div.indent .forumpost .content .posting {
+  @extend .c-comments__content;
+  color: color('nhs-grey-dark');
+}
+
+.indent div.indent {
+  border-left: 4px solid color('nhs-grey-pale');
+}
+
+.forumpost .options .commands {
+  @extend .c-comments__reply;
+}
+/*
+ * End of Forum post styles
+ */
+
+// Removing float for Display Mode dropdown to span out
+#page-mod-forum-discuss .discussioncontrols .discussioncontrol {
+  float: none;
+}
+
+// Forum Pagination
+.discussion-nav.clearfix ul {
+  @extend .c-pagination;
+}
+
+.discussion-nav.clearfix li {
+  @extend .c-pagination__item;
+}
+
+.discussion-nav.clearfix li a {
+  @extend .c-pagination__link;
+  display: inline;
+}
+
+.discussion-nav.clearfix ul > li:first-child {
+  @extend .c-pagination__item;
+  @extend .c-pagination__prev;
+}

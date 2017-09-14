@@ -1,0 +1,22 @@
+/* ==========================================================================
+   #GENERIC - Select dropdowns, text inputs, links
+   ========================================================================== */
+/**
+ * A way to map generic elements with cleaner Nightingale classes.
+ */
+
+select {
+  @extend .c-form-dropdown__select ;
+  @extend .c-form-input;
+}
+
+// Reduce bottom margin for Headings
+h2, h3 {
+  margin-bottom: $global-spacing-unit-tiny;
+}
+
+
+// Page headings on each page is repetitive; Not required; Breadcrumbs suffice
+.page-header-headings {
+  display: none;
+}

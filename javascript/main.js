@@ -3,11 +3,22 @@
  */
 M.theme_nhsla_nightingale = M.theme_nhsla_nightingale || {};
 M.theme_nhsla_nightingale.main = {};
-M.theme_nhsla_nightingale.main.init = function(Y) {
+M.theme_nhsla_nightingale.main.init = function(Y, is_student) {
 
-    // Start hiding default Moodle stuff not required in the theme
-        document.querySelector("a[href='#maincontent']").style.display = 'none';
-    // End of Default Moodle stuff
+    // Modify default Moodle stuff to match with Nightingale theme
+
+        // Hiding 'Skip Main Content' link on top of every page
+        $("a[href='#maincontent']").hide();
+
+        // Making ForumTable to use Nightingale classes via JS, instead of CSS as .forumheaderlist overpowers tbl elements to the core
+        $("table.forumheaderlist").removeClass("forumheaderlist").addClass("c-table-data");
+
+        // Hiding forum Group Selector if logged in user is Student
+        if(is_student == true) {
+            $(".groupselector").hide();
+        }
+
+    // End of Moodle Modification
 
 
     // Theme NHSLA Nightingale JS

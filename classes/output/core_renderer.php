@@ -78,8 +78,11 @@ class core_renderer extends \core_renderer {
         if (empty($PAGE->layout_options['nonavbar'])) {
           $html = html_writer::start_div('clearfix w-100 pull-xs-left', array('id' => 'page-navbar'));
           $html .= html_writer::tag('div', $this->navbar(), array('class' => 'breadcrumb-nav'));
+          $html .= html_writer::div($pageheadingbutton, 'breadcrumb-button pull-xs-right');
           $html .= html_writer::end_div();
           $html .= html_writer::start_tag('hr', array('class' => 'c-divider'));
+        } else if ($pageheadingbutton) {
+          $html .= html_writer::div($pageheadingbutton, 'breadcrumb-button nonavbar pull-xs-right');
         }
 
         // Heading with course or page headers
