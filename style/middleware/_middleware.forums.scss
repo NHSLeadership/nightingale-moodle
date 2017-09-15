@@ -15,17 +15,13 @@
 }
 
 // Forum Search
-.forumsearch {
-  float: right;
-}
-
 .forumsearch button {
   @extend .c-sprite;
   @extend .c-sprite--magnifying-glass-rev;
   float: right;
 }
 
-.forumsearch input > text {
+.forumsearch input[id="search"] {
   @extend .c-form-input;
 }
 
