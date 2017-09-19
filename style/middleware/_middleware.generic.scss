@@ -10,13 +10,18 @@ select {
   @extend .c-form-input;
 }
 
-// Reduce bottom margin for Headings
-h2, h3 {
-  margin-bottom: $global-spacing-unit-tiny;
-}
-
-
 // Page headings on each page is repetitive; Not required; Breadcrumbs suffice
 .page-header-headings {
   display: none;
+}
+
+// Discussion Forum subscription Icons (Can be removed in next version to replace with Nightingale icons)
+i.icon.fa.fa-envelope-open-o.fa-fw  {
+  @extend .c-sprite;
+  @extend .c-sprite--dot-inactive;
+}
+
+i.icon.fa.fa-envelope-o.fa-fw  {
+  @extend .c-sprite;
+  @extend .c-sprite--dot;
 }

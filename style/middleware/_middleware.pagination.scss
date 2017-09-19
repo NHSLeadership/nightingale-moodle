@@ -1,0 +1,33 @@
+/* ==========================================================================
+   #PAGINATION
+   ========================================================================== */
+/**
+ * A way to map Moodle pagination with cleaner Nightingale classes.
+ */
+
+ul.pagination {
+  @extend .c-pagination;
+}
+
+ul.pagination > li {
+  @extend .c-pagination__item;
+}
+
+ul.pagination > li > a {
+  @extend .c-pagination__link;
+}
+
+ul.pagination > li.page-item.active > a.page-link {
+  color: #e8edee !important;
+  pointer-events: none;
+}
+
+ul.pagination > li.page-item:first-child:not(.active) {
+  @extend .c-pagination__item;
+  @extend .c-pagination__prev;
+}
+
+ul.pagination > li.page-item:last-child:not(.active) {
+  @extend .c-pagination__item;
+  @extend .c-pagination__next;
+}

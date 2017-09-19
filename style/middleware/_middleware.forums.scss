@@ -80,6 +80,7 @@ div.indent .forumpost .content .posting {
 
 .indent div.indent {
   border-left: 4px solid color('nhs-grey-pale');
+  padding-left: 11px;
 }
 
 .forumpost .options .commands {
@@ -94,7 +95,7 @@ div.indent .forumpost .content .posting {
   float: none;
 }
 
-// Forum Pagination
+// Individual Forum Post Prev-Next Pagination
 .discussion-nav.clearfix ul {
   @extend .c-pagination;
 }
