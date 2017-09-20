@@ -7,12 +7,6 @@ M.theme_nhsla_nightingale.main.init = function(Y, is_student) {
 
     // Modify default Moodle stuff to match with Nightingale theme
 
-        // Hiding 'Skip Main Content' link on top of every page
-        $("a[href='#maincontent']").hide();
-
-        // Making ForumTable to use Nightingale classes via JS, instead of CSS as .forumheaderlist overpowers tbl elements to the core
-        $("table.forumheaderlist").removeClass("forumheaderlist").addClass("c-table-data");
-
         // Hiding forum Group Selector if logged in user is Student
         if(is_student == true) {
             $(".groupselector").hide();

@@ -4,10 +4,26 @@
 /**
  * A way to map generic elements with cleaner Nightingale classes.
  */
-
 select {
   @extend .c-form-dropdown__select ;
   @extend .c-form-input;
+}
+
+select:after {
+  @extend .c-form-dropdown:after;
+}
+
+.btn {
+  @extend .c-btn;
+}
+
+.btn-secondary {
+  @extend .c-btn--secondary;
+}
+
+// Hiding 'Skip Main Content' link from top of each page
+a[href='#maincontent'] {
+  display: none;
 }
 
 // Page headings on each page is repetitive; Not required; Breadcrumbs suffice

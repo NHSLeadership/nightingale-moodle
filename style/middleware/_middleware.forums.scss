@@ -25,6 +25,27 @@
   @extend .c-form-input;
 }
 
+// Forum List Table
+.path-mod-forum table.forumheaderlist {
+  @extend .c-table-data;
+  border: none;
+  border-bottom: 1px solid color('nhs-black');
+  border-collapse: collapse;
+}
+
+.path-mod-forum .forumheaderlist .replies, .path-mod-forum .forumheaderlist .discussion .author {
+  white-space: normal;
+}
+
+.path-mod-forum .forumheaderlist td {
+  border-style: none;
+  border-width: 0;
+}
+
+.path-mod-forum .forumheaderlist .discussion .lastpost {
+  text-align: left;
+  white-space: normal;
+}
 
 
 // Removing border of first post for every forum so it could stand out
@@ -43,7 +64,7 @@
 
 // Making first post thread topic/subject bolder
 .topic.firstpost.starter .subject {
-  font-weight: 700;
+  @extend strong;
   margin-top: $global-spacing-unit;
 }
 

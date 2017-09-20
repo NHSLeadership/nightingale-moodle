@@ -67,12 +67,12 @@
 
     <div class="o-wrapper">
          {{{ output.full_header }}}
+         {{#hasregionmainsettingsmenu}}
+         <div id="region-main-settings-menu" class="hidden-print {{#hasblocks}}has-blocks{{/hasblocks}}">
+             <div> {{{ output.region_main_settings_menu }}} </div>
+         </div>
+         {{/hasregionmainsettingsmenu}}
         <div id="region-main-box" class="col-xs-12 o-layout o-layout--wide">
-            {{#hasregionmainsettingsmenu}}
-            <div id="region-main-settings-menu" class="hidden-print {{#hasblocks}}has-blocks{{/hasblocks}}">
-                <div> {{{ output.region_main_settings_menu }}} </div>
-            </div>
-            {{/hasregionmainsettingsmenu}}
             <section id="region-main" {{#hasblocks}}class="has-blocks o-layout__item u-8/12@lg"{{/hasblocks}} {{^hasblocks}}class="o-layout__item u-8/12@lg"{{/hasblocks}}>
                 <hr class="c-divider"/>
                 <div class="card card-block">
