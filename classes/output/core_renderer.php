@@ -72,14 +72,12 @@ class core_renderer extends \core_renderer {
         global $PAGE;
 
         // Moved breadcrumbs before heading as per Nightingale design
-        $pageheadingbutton = $this->page_heading_button();
 
         $html = "";
         if (empty($PAGE->layout_options['nonavbar'])) {
           $html = html_writer::start_div('clearfix w-100 pull-xs-left', array('id' => 'page-navbar'));
           $html .= html_writer::tag('div', $this->navbar(), array('class' => 'breadcrumb-nav'));
           $html .= html_writer::end_div();
-          $html .= html_writer::start_tag('hr', array('class' => 'c-divider'));
         }
 
         // Heading with course or page headers
@@ -735,5 +733,29 @@ class core_renderer extends \core_renderer {
           format_string($this->page->course->shortname, true, array('context' => $this->page->context)) . '</a></div>';
       }
 
+    }
+
+  /**
+   * HTML for Search Forum form detached from full_header based on Nightingale theme design
+   *
+   * @return string HTML to display the forum search form.
+   */
+  public function search_forum_form() {
+
+      global $PAGE;
+      $pageheadingbutton = $this->page_heading_button();
+
+      $html = "";
+
+      if (empty($PAGE->layout_options['nonavbar'])) {
+        $html .= html_writer::start_div('breadcrumb-button navbar pull-xs-right o-layout__item u-4/12@lg');
+      } else if ($pageheadingbutton) {
+        $html .= html_writer::div($pageheadingbutton, 'breadcrumb-button nonavbar pull-xs-right o-layout__item u-4/12@lg');
+      }
+      $html .= html_writer::start_tag('hr', array('class' => 'c-divider'));
+      $html .= $pageheadingbutton;
+      $html .= html_writer::end_div();
+
+      return $html;
     }
 }

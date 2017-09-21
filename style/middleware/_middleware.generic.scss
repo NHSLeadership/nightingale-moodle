@@ -1,0 +1,43 @@
+/* ==========================================================================
+   #GENERIC - Select dropdowns, text inputs, links
+   ========================================================================== */
+/**
+ * A way to map generic elements with cleaner Nightingale classes.
+ */
+select {
+  @extend .c-form-dropdown__select ;
+  @extend .c-form-input;
+}
+
+select:after {
+  @extend .c-form-dropdown:after;
+}
+
+.btn {
+  @extend .c-btn;
+}
+
+.btn-secondary {
+  @extend .c-btn--secondary;
+}
+
+// Hiding 'Skip Main Content' link from top of each page
+a[href='#maincontent'] {
+  display: none;
+}
+
+// Page headings on each page is repetitive; Not required; Breadcrumbs suffice
+.page-header-headings {
+  display: none;
+}
+
+// Discussion Forum subscription Icons (Can be removed in next version to replace with Nightingale icons)
+i.icon.fa.fa-envelope-open-o.fa-fw  {
+  @extend .c-sprite;
+  @extend .c-sprite--dot-inactive;
+}
+
+i.icon.fa.fa-envelope-o.fa-fw  {
+  @extend .c-sprite;
+  @extend .c-sprite--dot;
+}

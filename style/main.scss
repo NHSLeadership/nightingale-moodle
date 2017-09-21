@@ -1,4 +1,7 @@
 @import "settings.pre-config";
 @import "nightingale/main";
+@import "middleware/middleware.generic";
+@import "middleware/middleware.pagination";
 @import "middleware/middleware.header";
 @import "middleware/middleware.breadcrumb";
+@import "middleware/middleware.forums";

@@ -22,12 +22,24 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+// Get Theme Nightingale's JS variables
+$theme_nightingale_variables = array();
+
+if(user_has_role_assignment($USER->id,5)) { // 5 is the role id for Student
+  $theme_nightingale_variables['is_student'] = true;
+} else {
+  $theme_nightingale_variables['is_student'] = false;
+}
+
+// Call Theme Nightingale's main JS file
 $jsmodule = array(
   'name' => 'theme_nhsla_nightingale',
   'fullpath' => new moodle_url('/theme/nightingale/javascript/main.js')
 );
 
-$PAGE->requires->js_init_call('M.theme_nhsla_nightingale.main.init', null, false, $jsmodule);
+$PAGE->requires->js_init_call('M.theme_nhsla_nightingale.main.init', $theme_nightingale_variables, false, $jsmodule);
+$PAGE->requires->jquery();
+$PAGE->requires->jquery_plugin('ui');
 
 user_preference_allow_ajax_update('drawer-open-nav', PARAM_ALPHA);
 require_once($CFG->libdir . '/behat/lib.php');

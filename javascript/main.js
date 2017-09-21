@@ -3,11 +3,16 @@
  */
 M.theme_nhsla_nightingale = M.theme_nhsla_nightingale || {};
 M.theme_nhsla_nightingale.main = {};
-M.theme_nhsla_nightingale.main.init = function(Y) {
+M.theme_nhsla_nightingale.main.init = function(Y, is_student) {
 
-    // Start hiding default Moodle stuff not required in the theme
-        document.querySelector("a[href='#maincontent']").style.display = 'none';
-    // End of Default Moodle stuff
+    // Modify default Moodle stuff to match with Nightingale theme
+
+        // Hiding forum Group Selector if logged in user is Student
+        if(is_student == true) {
+            $(".groupselector").hide();
+        }
+
+    // End of Moodle Modification
 
 
     // Theme NHSLA Nightingale JS
