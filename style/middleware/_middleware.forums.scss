@@ -134,3 +134,37 @@ div.indent .forumpost .content .posting {
   @extend .c-pagination__item;
   @extend .c-pagination__prev;
 }
+
+/**
+ * Forum forms
+ */
+form[id="mformforum"] legend {
+  display: none;
+}
+
+form[id="mformforum"] a.collapseexpand {
+  display: none;
+}
+
+// WSIWYG editor toolbar background
+div.editor_atto_toolbar {
+  background-color: color('nhs-grey-pale');
+}
+
+// Moving required icon closer to label
+.pull-xs-right.text-nowrap i {
+  float: left;
+}
+
+  input[id="id_submitbutton"] {
+  @extend .c-btn--submit;
+}
+
+// Hidden little question mark help icon links
+form[id="mformforum"] .form-group.row.fitem .text-nowrap a {
+  display: none;
+}
+
+/**
+ * End of Forum forms
+ */

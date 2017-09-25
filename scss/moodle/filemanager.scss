@@ -20,10 +20,12 @@
     text-align: center;
     margin: 10px;
 
-    @include border-radius(10px);
+    //@include border-radius(10px);
+    border-radius: 10px;
     display: inline-block;
 
-    @include box-shadow(2px 2px 3px .1px #999);
+    //@include box-shadow(2px 2px 3px .1px #999);
+    box-shadow: 2px 2px 3px .1px #999;
 }
 
 // File Picker layout
@@ -39,6 +41,12 @@
     border-bottom: 1px solid #e5e5e5;
     min-height: 40px;
     padding: 4px;
+    background-color: color('white');
+}
+
+.fp-navbar {
+    background-color: color('nhs-grey-pale');
+    border: 1px solid rgba(0,0,0,.125);
 }
 
 .file-picker .fp-content {
@@ -115,12 +123,12 @@
 }
 
 .fp-viewbar:not(.disabled) a.checked {
-    @extend .btn-secondary.active;
+    //@extend .btn-secondary.active;
 }
 
 .fp-viewbar.disabled a {
-    @extend .btn.disabled;
-    @extend .btn-secondary.disabled;
+    //@extend .btn.disabled;
+    //@extend .btn-secondary.disabled;
 }
 
 .file-picker .fp-clear-left {
@@ -169,14 +177,16 @@
     padding: 3px;
     vertical-align: middle;
 
-    @include box-shadow(1px 1px 2px 0 #ccc);
+    //@include box-shadow(1px 1px 2px 0 #ccc);
+    box-shadow: 1px 1px 2px 0 #ccc;
 }
 
 .fp-iconview .fp-thumbnail:hover {
     background: #fff;
     border: 1px solid #ddd;
 
-    @include box-shadow(inset 0 0 10px0 #ccc);
+    //@include box-shadow(inset 0 0 10px0 #ccc);
+    box-shadow: 0 0 10px 0 #ccc inset;
 }
 
 .fp-iconview .fp-filename-field {
@@ -465,7 +475,7 @@ a.ygtvspacer:hover {
 }
 
 .fp-select .fp-info {
-    font-size: $font-size-xs;
+        @include font-size(14px, 20/14);;
 }
 
 .fp-select .fp-thumbnail {
@@ -478,7 +488,8 @@ a.ygtvspacer:hover {
     background: #fff;
     border: 1px solid #ddd;
 
-    @include box-shadow(inset 0 0 10px 0 #ccc);
+    //@include box-shadow(inset 0 0 10px 0 #ccc);
+    box-shadow: 0 0 10px 0 #ccc inset;
 }
 
 .fp-select .fp-thumbnail img {
@@ -587,8 +598,10 @@ a.ygtvspacer:hover {
 
 .filepicker-filelist,
 .filemanager-container {
+    border: 1px solid rgba(0,0,0,.125);
     min-height: 140px;
     border-top: 0;
+    padding: 10px;
 }
 
 .filemanager .fp-content {
@@ -612,7 +625,7 @@ a.ygtvspacer:hover {
 }
 
 .fitem.disabled .fp-btn-choose {
-    @extend .text-muted;
+    //@extend .text-muted;
 }
 
 .fitem.disabled .filepicker-filelist .filepicker-filename {
@@ -741,7 +754,7 @@ a.ygtvspacer:hover {
 .filepicker-filelist .filepicker-container,
 .filemanager.fm-noitems .fm-empty-container {
     display: block;
-    position: absolute;
+    //position: absolute;
     top: 10px;
     bottom: 10px;
     left: 10px;
@@ -763,7 +776,7 @@ a.ygtvspacer:hover {
     padding-top: 85px;
     text-align: center;
 
-    @include box-shadow(0 0 0 10px #fff);
+    //@include box-shadow(0 0 0 10px #fff);
 }
 
 .filepicker-filelist.dndupload-over .dndupload-target,
@@ -816,7 +829,7 @@ a.ygtvspacer:hover {
     background: url([[pix:theme|fp/dnd_arrow]]) center no-repeat;
     width: 100%;
     height: 80px;
-    position: absolute;
+    //position: absolute;
     top: 5px;
 }
 

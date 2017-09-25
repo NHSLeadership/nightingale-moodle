@@ -1,0 +1,15 @@
+/* ==========================================================================
+   #ICONS
+   ========================================================================== */
+/**
+ * Moodle Default icons related changes to suit Nightingale design
+ */
+
+// Hide question mark icon sitewide
+i.icon.fa.fa-question-circle.text-info.fa-fw {
+  display: none;
+}
+
+i.fa-exclamation-circle:before {
+  color: color('error');
+}

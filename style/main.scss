@@ -4,4 +4,18 @@
 @import "middleware/middleware.pagination";
 @import "middleware/middleware.header";
 @import "middleware/middleware.breadcrumb";
+@import "middleware/middleware.forms";
 @import "middleware/middleware.forums";
+@import "middleware/middleware.icons";
+
+/*
+ * Importing Moodle related SASS for v1
+ * To be removed in future versions when all relevant Nightingale icons ready
+ */
+
+// Import Moodle's Font Awesome icons.
+@import "fontawesome/moodle-path";
+@import "fontawesome/font-awesome";
+
+// Import Moodle's File Picker
+@import "middleware/middleware.filepicker";
