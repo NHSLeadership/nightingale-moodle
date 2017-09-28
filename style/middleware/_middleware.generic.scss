@@ -5,16 +5,14 @@
  * A way to map generic elements with cleaner Nightingale classes.
  */
 select {
+  @extend .c-form-dropdown;
   @extend .c-form-dropdown__select ;
   @extend .c-form-input;
 }
 
-select:after {
-  @extend .c-form-dropdown:after;
-}
-
 .btn {
   @extend .c-btn;
+  @extend .c-btn--full;
 }
 
 .btn-secondary {
