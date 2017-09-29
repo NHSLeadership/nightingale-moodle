@@ -21,6 +21,9 @@ $grid-breakpoints: (
 @import "bootstrap/mixins/breakpoints";
 @import "bootstrap/modal";
 
+.modal-footer .buttons .singlebutton {
+  margin-bottom: $global-spacing-unit-tiny;
+}
 /* Moodle Dialogue Settings (moodle-core-dialogue)  */
 .moodle-dialogue-base .moodle-dialogue-lightbox {
   background-color: color('nhs-grey-pale');
@@ -49,7 +52,7 @@ $grid-breakpoints: (
 
 .moodle-dialogue-base .moodle-dialogue-fullscreen .closebutton {
   width: 28px;
-  height: 16px;
+  height: 28px;
   background-size: 100%;
 }
 
