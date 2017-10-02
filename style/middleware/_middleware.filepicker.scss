@@ -1,0 +1,247 @@
+/* ==========================================================================
+   #FILEPICKER - Core Moodle Dialog box to be used for v1
+   @TO-DO: Remove when Nightingale has dialog-box styling in future versions
+   ========================================================================== */
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+        xs: 0,
+        sm: 544px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px
+) !default;
+
+/* Importing default Moodle mixins required for File picker to work */
+@import "bootstrap/mixins/clearfix";
+@import "bootstrap/mixins/breakpoints";
+@import "bootstrap/modal";
+
+.modal-footer .buttons .singlebutton {
+  margin-bottom: $global-spacing-unit-tiny;
+}
+/* Moodle Dialogue Settings (moodle-core-dialogue)  */
+.moodle-dialogue-base .moodle-dialogue-lightbox {
+  background-color: color('nhs-grey-pale');
+}
+
+.moodle-dialogue-base .hidden,
+.moodle-dialogue-base .moodle-dialogue-hidden {
+  display: none;
+}
+
+.no-scrolling {
+  overflow: hidden;
+}
+
+.moodle-dialogue-base .moodle-dialogue-fullscreen {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: -50px;
+  position: fixed;
+}
+
+.moodle-dialogue-base .moodle-dialogue-fullscreen .moodle-dialogue-content {
+  overflow: auto;
+}
+
+.moodle-dialogue-base .moodle-dialogue-fullscreen .closebutton {
+  width: 28px;
+  height: 28px;
+  background-size: 100%;
+}
+
+.moodle-dialogue-base .moodle-dialogue-wrap {
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+// Show is a bootstrap 2 class - but we use it for modals. We don't want to enable it everywhere because they removed
+// it for a reason (conflicts with jquery .show()).
+.modal.show {
+  display: block;
+}
+
+.moodle-dialogue-base .moodle-dialogue-wrap.moodle-dialogue-content {
+  @extend .modal-content;
+}
+
+.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd {
+  @extend .modal-header;
+}
+
+.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd.yui3-widget-hd {
+  // Undo some YUI damage.
+  min-height: 3rem;
+  color: initial;
+  background: initial;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd h1 {
+  @extend .modal-title;
+}
+
+.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd .yui3-widget-buttons {
+  /*rtl:raw:
+      left: 0;
+      right: auto;
+  */
+  padding: 1rem;
+}
+
+.moodle-dialogue-base .closebutton {
+  @extend .close;
+  box-shadow: none;
+  &::after {
+    content: "×";
+  }
+}
+
+.moodle-dialogue-base .moodle-dialogue .moodle-dialogue-bd {
+  @extend .modal-body;
+}
+
+.moodle-dialogue-base .moodle-dialogue-fullscreen .moodle-dialogue-content {
+  overflow: auto;
+  position: absolute;
+  top: 0;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  margin: 0;
+  border: 0;
+}
+
+.moodle-dialogue-exception .moodle-exception-param label {
+  font-weight: bold;
+}
+
+.moodle-dialogue-exception .param-stacktrace label {
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-bottom-width: 0;
+}
+
+.moodle-dialogue-exception .param-stacktrace pre {
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.moodle-dialogue-exception .param-stacktrace .stacktrace-file {
+  color: navy;
+  font-size: .875rem;
+}
+
+.moodle-dialogue-exception .param-stacktrace .stacktrace-line {
+  //@extend .text-warning;
+  font-size: .875rem;
+}
+
+.moodle-dialogue-exception .param-stacktrace .stacktrace-call {
+  color: #333;
+  font-size: 90%;
+  border-bottom: 1px solid #eee;
+}
+
+.moodle-dialogue-base .moodle-dialogue .moodle-dialogue-content .moodle-dialogue-ft {
+  @extend .modal-footer;
+}
+
+.moodle-dialogue-base .moodle-dialogue .moodle-dialogue-content .moodle-dialogue-ft:empty {
+  display: none;
+}
+
+.moodle-dialogue-base .moodle-dialogue .moodle-dialogue-content .moodle-dialogue-ft.yui3-widget-ft {
+  // Undo some YUI damage.
+  background: initial;
+}
+
+.moodle-dialogue-confirm .confirmation-message {
+  margin: 0.5em 1em;
+}
+.moodle-dialogue-confirm .confirmation-buttons {
+  text-align: right;
+}
+
+.moodle-dialogue-confirm .confirmation-dialogue input {
+  min-width: 80px;
+}
+
+.moodle-dialogue-exception .moodle-exception-message {
+  margin: 1em;
+}
+
+.moodle-dialogue-exception .moodle-exception-param {
+  margin-bottom: 0.5em;
+}
+
+.moodle-dialogue-exception .moodle-exception-param label {
+  width: 150px;
+}
+
+.moodle-dialogue-exception .param-stacktrace label {
+  display: block;
+  margin: 0;
+  padding: 4px 1em;
+}
+
+.moodle-dialogue-exception .param-stacktrace pre {
+  display: block;
+  height: 200px;
+  overflow: auto;
+}
+
+.moodle-dialogue-exception .param-stacktrace .stacktrace-file {
+  display: inline-block;
+  margin: 4px 0;
+}
+
+.moodle-dialogue-exception .param-stacktrace .stacktrace-line {
+  display: inline-block;
+  width: 50px;
+  margin: 4px 1em;
+}
+
+.moodle-dialogue-exception .param-stacktrace .stacktrace-call {
+  padding-left: 25px;
+  margin-bottom: 4px;
+  padding-bottom: 4px;
+}
+
+.moodle-dialogue .moodle-dialogue-bd .content-lightbox {
+  opacity: 0.75;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: white;
+  text-align: center;
+  padding: 10% 0;
+}
+/* Apply a default max-height on tooltip text */
+.moodle-dialogue .tooltiptext {
+  max-height: 300px;
+}
+
+.moodle-dialogue-base .moodle-dialogue.moodle-dialogue-tooltip {
+  z-index: 3001;
+
+  .moodle-dialogue-bd {
+    overflow: auto;
+  }
+}
+
+// Import File picker styling
+@import "moodle/filemanager";
+
+// Edit file picker close button
+.yui3-button {
+  padding: 0 5px;
+}

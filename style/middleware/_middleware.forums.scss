@@ -107,6 +107,10 @@ div.indent .forumpost .content .posting {
 .forumpost .options .commands {
   @extend .c-comments__reply;
 }
+
+.path-mod-forum :target~.forumpost:before {
+  left:-10px;
+}
 /*
  * End of Forum post styles
  */
@@ -134,3 +138,56 @@ div.indent .forumpost .content .posting {
   @extend .c-pagination__item;
   @extend .c-pagination__prev;
 }
+
+/**
+ * Forum forms
+ */
+form[id="mformforum"] legend {
+  display: none;
+}
+
+form[id="mformforum"] a.collapseexpand {
+  display: none;
+}
+
+// WSIWYG editor toolbar background
+div.editor_atto_toolbar {
+  background-color: color('nhs-grey-pale');
+}
+
+// Moving required icon closer to label
+.pull-xs-right.text-nowrap i {
+  float: left;
+}
+
+input[id="id_submitbutton"] {
+  @extend .c-btn--submit;
+  @extend .c-btn--full;
+}
+
+// Hidden little question mark help icon links
+form[id="mformforum"] .form-group.row.fitem .text-nowrap a {
+  display: none;
+}
+
+fieldset[id="id_displayperiod"] .form-inline .form-group {
+  display: inline-block;
+  margin: 0;
+  vertical-align: middle;
+}
+
+form[id="mformforum"] .form-inline label.form-check.fitem {
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 0px;
+  margin-top: 32px;
+}
+
+// Forum form buttons
+.form-group.fitem.btn-cancel {
+  display: block !important;
+}
+
+/**
+ * End of Forum forms
+ */

@@ -1,0 +1,19 @@
+/* ==========================================================================
+   #FORMS
+   ========================================================================== */
+/**
+ * Remapping default Moodle form styling with cleaner Nightingale ones.
+ */
+
+fieldset {
+  border: none;
+}
+
+input[type="text"] {
+  @extend .c-form-input;
+}
+
+div.form-group.row.fitem {
+  @extend .c-form-list__item;
+}
+
