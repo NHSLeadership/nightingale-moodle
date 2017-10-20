@@ -84,11 +84,16 @@
                 {{{ output.course_content_footer }}}
                 </div>
             </section>
-            {{{output.search_forum_form}}}
             {{#hasblocks}}
-            <section data-region="blocks-column" class="hidden-print">
+            <section data-region="blocks-column" class="hidden-print o-layout__item u-4/12@lg">
+                {{{output.search_forum_form}}}
                 {{{ sidepreblocks }}}
             </section>
+            {{/hasblocks}}
+            {{^hasblocks}}
+                <section data-region="blocks-column" class="hidden-print o-layout__item u-4/12@lg">
+                    {{{output.search_forum_form}}}
+                </section>
             {{/hasblocks}}
         </div>
     </div>

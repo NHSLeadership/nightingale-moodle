@@ -150,6 +150,18 @@ form[id="mformforum"] a.collapseexpand {
   display: none;
 }
 
+select[id="id_timestart_day"], select[id="id_timeend_day"] {
+  width: 58px;
+}
+
+select[id="id_timestart_year"], select[id="id_timeend_year"] {
+  width: 72px;
+}
+
+select[id="id_timestart_hour"], select[id="id_timeend_hour"] {
+  width: 56px;
+}
+
 // WSIWYG editor toolbar background
 div.editor_atto_toolbar {
   background-color: color('nhs-grey-pale');
@@ -186,6 +198,26 @@ form[id="mformforum"] .form-inline label.form-check.fitem {
 // Forum form buttons
 .form-group.fitem.btn-cancel {
   display: block !important;
+}
+
+// Restrict Filepicker icons to not look like secondary buttons
+.fp-navbar a.btn.btn-secondary.btn-sm {
+  width: unset;
+  padding: 0;
+  border: none;
+}
+
+// Latest Announcements Block
+.unlist .date, .unlist .name {
+  @extend small;
+}
+
+.name {
+  margin-left: $global-spacing-unit-tiny;
+}
+
+button[id="searchform_button"] {
+  margin-top: $global-spacing-unit-tiny;
 }
 
 /**

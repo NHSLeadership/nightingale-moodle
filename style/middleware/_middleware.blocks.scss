@@ -1,0 +1,12 @@
+/* ==========================================================================
+   #Blocks - Style Moodle Blocks across site with Nightingale classes
+   ========================================================================== */
+
+.block-region aside {
+  border-bottom: 1px solid color('nhs-grey-mid');
+  padding: $global-spacing-unit-tiny;
+}
+
+.block-region aside > h3 {
+  font-size: 0.8rem;
+}

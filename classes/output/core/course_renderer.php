@@ -20,7 +20,7 @@
  * @package    theme_noanme
  */
 
-namespace theme_boost\output\core;
+namespace theme_nightingale\output\core;
 defined('MOODLE_INTERNAL') || die();
 
 use moodle_url;
@@ -71,7 +71,7 @@ class course_renderer extends \core_course_renderer {
             'value' => $value
         ];
 
-        return $this->render_from_template('theme_boost/course_search_form', $data);
+        return $this->render_from_template('theme_nightingale/course_search_form', $data);
     }
 
 }

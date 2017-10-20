@@ -20,7 +20,7 @@
  * @package    theme_noanme
  */
 
-namespace theme_boost\output\core;
+namespace theme_nightingale\output\core;
 defined('MOODLE_INTERNAL') || die();
 
 use moodle_url;
