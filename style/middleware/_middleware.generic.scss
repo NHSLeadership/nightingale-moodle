@@ -1,9 +1,12 @@
 /* ==========================================================================
    #GENERIC - Select dropdowns, text inputs, links
+   A way to map generic elements with cleaner Nightingale classes.
    ========================================================================== */
-/**
- * A way to map generic elements with cleaner Nightingale classes.
- */
+
+[data-fieldtype="select"] {
+  @extend .c-form-dropdown;
+}
+
 select {
   @extend .c-form-dropdown;
   @extend .c-form-dropdown__select ;
@@ -21,6 +24,11 @@ select {
 
 .btn-primary {
   @extend .c-btn--primary;
+}
+
+/* List items used in Latest Announcements block */
+.unlist {
+  @extend .o-list-bare;
 }
 
 // Hiding 'Skip Main Content' link from top of each page
@@ -42,4 +50,10 @@ i.icon.fa.fa-envelope-open-o.fa-fw  {
 i.icon.fa.fa-envelope-o.fa-fw  {
   @extend .c-sprite;
   @extend .c-sprite--dot;
+}
+
+
+// Hide the 'Skip' links as they are unwanted for our theme
+a.sr-only.sr-only-focusable {
+  display: none;
 }

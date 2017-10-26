@@ -748,14 +748,48 @@ class core_renderer extends \core_renderer {
       $html = "";
 
       if (empty($PAGE->layout_options['nonavbar'])) {
-        $html .= html_writer::start_div('breadcrumb-button navbar pull-xs-right o-layout__item u-4/12@lg');
+        $html .= html_writer::start_div('breadcrumb-button navbar pull-xs-right');
       } else if ($pageheadingbutton) {
-        $html .= html_writer::div($pageheadingbutton, 'breadcrumb-button nonavbar pull-xs-right o-layout__item u-4/12@lg');
+        $html .= html_writer::div($pageheadingbutton, 'breadcrumb-button nonavbar pull-xs-right');
       }
       $html .= html_writer::start_tag('hr', array('class' => 'c-divider'));
       $html .= $pageheadingbutton;
       $html .= html_writer::end_div();
 
+      // Display Forums on right in Blocks section.
+      $html .= $this->get_course_forum_section();
+
       return $html;
+  }
+
+  /**
+   * HTML for 'General' section containing forums so they can be
+   * outputted with other blocks on right
+   *
+   * @return string
+   */
+  public function get_course_forum_section() {
+
+    global $PAGE, $COURSE;
+
+    $modinfo = get_fast_modinfo($COURSE);
+    $o = "";
+
+    $course_renderer = $PAGE->get_renderer('course');
+
+    $thissection = $modinfo->get_section_info(0);
+    if ($thissection->summary or !empty($modinfo->sections[0]) or $PAGE->user_is_editing()) {
+
+      $o .= html_writer::start_tag('h3');
+      $o .= get_string('forumsheading', 'theme_nightingale');
+      $o .= html_writer::end_tag('h3');
+      $o .= $course_renderer->course_section_cm_list($COURSE, $thissection, 0);
+      $o .= html_writer::start_tag('hr', array('class' => 'c-divider'));
+
     }
+
+    return $o;
+
+  }
 }
+

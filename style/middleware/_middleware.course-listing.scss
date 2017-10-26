@@ -1,0 +1,91 @@
+/* ==========================================================================
+   #COURSE LISTING - A way to map generic elements with cleaner Nightingale classes.
+   ========================================================================== */
+
+// Additional or repetitive section names can be hidden
+.course-content span.hidden.sectionname {
+  display: none;
+}
+
+// Course Listing navigation need not float right
+.course-content .c-nav-primary {
+  float: none;
+}
+
+// Hide list bullet styles across overall course listing
+.course-content li {
+  list-style: none;
+}
+
+/*
+ * Hide activity/resource icons from Course Listing for v1
+ * @TO-DO: Remove this in future version when Nightingale icons ready
+ */
+.course-content .topics img.iconlarge.activityicon {
+  display: none;
+}
+
+/*
+ * Temporary hiding Module activity & progress summary on Course listing page
+ */
+.course-content .content .section-summary-activities.mdl-right {
+  display: none;
+}
+
+// Hide 'General' section (Forums list) from Course Listing display as that would be displayed on right
+.course-content .topics li[id="section-0"] {
+  display: none;
+}
+
+// No list bullets on course listing page anywhere
+ul.section.img-text li {
+  list-style: none;
+}
+
+// Similarly no Moodle activity icons on Course listing page anywhere
+ul.section.img-text img.iconlarge.activityicon {
+  display: none;
+}
+
+// Start of Completion icon button styling
+li.activity .actions button.btn.btn-link {
+  width: unset;
+  border: none;
+  transition: unset;
+  padding: 0;
+  margin-top: -$global-spacing-unit-large;
+  background-color: #fff;
+}
+
+li.activity .actions button.btn.btn-link {
+  &:hover {
+    box-shadow: none;
+  }
+
+  &:active {
+    box-shadow: none;
+  }
+}
+
+li.activity .actions button.icon {
+  @extend .c-sprite;
+  @extend .c-sprite--dot;
+}
+
+li.activity .actions span.autocompletion img {
+  margin-top: -$global-spacing-unit;
+}
+
+// End of completion icon changes
+
+// Activity/Resource name on Course section page
+.activityinstance {
+  margin-left: $global-spacing-unit;
+}
+
+// Forum block on right
+section[data-region="blocks-column"] ul.section.img-text {
+  margin-left: 0;
+}
+
+
