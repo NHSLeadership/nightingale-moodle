@@ -1,0 +1,66 @@
+/* ==========================================================================
+   #COURSE VIEW
+   ========================================================================== */
+
+// Navbuttons plugin
+#navbuttons {
+  margin-bottom: $global-spacing-unit-small;
+  border-bottom: 1px solid color('nhs-grey-mid');
+  border-top: 1px solid color('nhs-grey-mid');
+  padding: $global-spacing-unit-small;
+}
+
+#navbuttons .navbuttontext {
+  float: none;
+}
+
+form.togglecompletion.navbuttontext {
+  text-align: center;
+  margin-bottom: $global-spacing-unit-tiny;
+}
+
+form.togglecompletion.navbuttontext input.custom_activity_completion {
+  @extend .c-btn;
+  @extend .c-btn--submit;
+  @extend .c-btn--natural;
+  padding: $global-spacing-unit-small;
+  white-space: normal;
+}
+
+form.navbuttontext.prev {
+  display: inline-block;
+  float: left;
+  text-align: left;
+  width: 50%;
+  padding-left: $global-spacing-unit-tiny;
+}
+
+form.navbuttontext.prev input[type="submit"] {
+  @extend .c-btn;
+  @extend .c-btn--primary;
+  @extend .c-btn--natural;
+  white-space: normal;
+
+}
+
+form.navbuttontext.next {
+  display: inline-block;
+  float: right;
+  text-align: right;
+  width: 50%;
+  padding-left: $global-spacing-unit-tiny;
+}
+
+form.navbuttontext.next input[type="submit"] {
+  @extend .c-btn;
+  @extend .c-btn--submit;
+  @extend .c-btn--natural;
+  white-space: normal;
+}
+
+// Video Plugin
+.vjs-big-play-button {
+  @extend .c-sprite;
+  @extend .c-sprite--play;
+  @extend .c-media__emblem;
+}
