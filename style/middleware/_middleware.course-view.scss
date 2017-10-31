@@ -1,7 +1,6 @@
 /* ==========================================================================
    #COURSE VIEW
    ========================================================================== */
-
 // Navbuttons plugin
 #navbuttons {
   margin-bottom: $global-spacing-unit-small;
@@ -56,10 +55,21 @@ form.navbuttontext.next input[type="submit"] {
   @extend .c-btn--submit;
   @extend .c-btn--natural;
   white-space: normal;
+  height: $global-spacing-unit-large; // To make it look same height as Prev button as it can shrink at times based on activity name's length
 }
 
 // Video Plugin
-.vjs-big-play-button {
+.video-js {
+  background: none;
+}
+
+// To give light overlay, although it wont work if we have a default poster image which overrides any background relay
+.mediaplugin.mediaplugin_videojs {
+  @extend .c-media__masthead;
+}
+
+// Play button
+.video-js .vjs-big-play-button {
   @extend .c-sprite;
   @extend .c-sprite--play;
   @extend .c-media__emblem;

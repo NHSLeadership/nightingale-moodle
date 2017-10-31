@@ -3,6 +3,7 @@
    A way to map generic elements with cleaner Nightingale classes.
    ========================================================================== */
 
+// Select dropdown
 [data-fieldtype="select"] {
   @extend .c-form-dropdown;
 }
@@ -13,6 +14,12 @@ select {
   @extend .c-form-input;
 }
 
+// Textarea
+textarea {
+  @extend .c-form-input;
+}
+
+// Buttons
 .btn {
   @extend .c-btn;
   @extend .c-btn--full;
@@ -24,6 +31,15 @@ select {
 
 .btn-primary {
   @extend .c-btn--primary;
+}
+
+// Certain submit, primary, secondary buttons need special tracking to have proper Nightingale classes
+input[type="submit"] {
+  @extend .c-btn--submit;
+}
+
+input[id="id_cancel"] {
+  @extend .c-btn--secondary;
 }
 
 /* List items used in Latest Announcements block */
@@ -57,3 +73,22 @@ i.icon.fa.fa-envelope-o.fa-fw  {
 a.sr-only.sr-only-focusable {
   display: none;
 }
+
+// Tabs
+ul.nav-tabs {
+  @extend .c-tabs;
+}
+
+ul.nav-tabs > li {
+  @extend .c-tabs__item;
+}
+
+ul.nav-tabs > li > a {
+  @extend .c-tabs__link;
+}
+
+ul.nav-tabs > li > a.active {
+  @extend .c-tabs__link;
+  @extend .is-current;
+}
+
