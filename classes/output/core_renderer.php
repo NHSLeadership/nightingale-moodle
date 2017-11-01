@@ -791,5 +791,23 @@ class core_renderer extends \core_renderer {
     return $o;
 
   }
+
+  /**
+   * @return string
+   */
+  public function footer()
+  {
+    global $CFG;
+    if(file_exists($CFG->dirroot.'/blocks/navbuttons/footer.php')) {
+      require_once($CFG->dirroot.'/blocks/navbuttons/footer.php');  // Add this line to enable the navigation buttons plugin
+
+      $output = draw_navbuttons().parent::container_end_all(true);
+
+      $footer = parent::footer();
+
+      return $output . $footer;
+    }
+  }
+
 }
 
