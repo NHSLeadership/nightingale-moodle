@@ -164,6 +164,12 @@ function theme_nightingale_get_html_for_settings(renderer_base $output, moodle_p
         $return->ribbonhtml = theme_nightingale_get_ribbonhtml($page->theme->settings->ribbons);
     }
 
+    $return->cookieribbon = '';
+    $return->cookieribbonhtml = '';
+    if(!empty($page->theme->settings->cookieribbon)) {
+      $return->cookieribbonhtml = theme_nightingale_get_cookieribbonhtml($page->theme->settings->cookieribbon);
+    }
+
     $return->logosrc = '';
     if (!empty($page->theme->settings->logo)) {
       $return->logosrc = $page->theme->setting_file_url('logo', 'logo');
@@ -220,6 +226,55 @@ function theme_nightingale_get_ribbonhtml($ribbon) {
   }
 
   return $ribbonhtml;
+
+}
+
+/**
+ * Gets Cookie ribbon displayed on Login page based on Theme setting
+ *
+ * @param $ribbon
+ * @return string
+ */
+function theme_nightingale_get_cookieribbonhtml($cookieribbon) {
+
+  global $PAGE;
+  $cookieribbonhtml = '';
+
+  $cookieurl = '';
+  if(!empty($PAGE->theme->settings->cookieurl)) {
+    $cookieurl = $PAGE->theme->settings->cookieurl;
+  }
+
+  if(!empty($cookieribbon)) {
+
+    switch($cookieribbon) {
+
+      case 'no':
+        $cookieribbonhtml = '';
+        break;
+
+      case 'yes':
+      default:
+        $cookieribbonhtml = '<div class="c-ribbon  u-margin-bottom" id="jsCookieRibbon">
+
+                                <div class="o-wrapper">
+  
+                                  <div class="c-ribbon__actions">
+                                    <button class="c-sprite  c-sprite--close-rev" id="jsCookieBtn">Close</button>
+                                  </div>
+  
+                                  <strong class="c-ribbon__body"><span class="c-sprite  c-sprite--info-rev"></span> <a href="'.$cookieurl.'">Cookies <span class="c-sprite  c-sprite--new-window-rev"></span></a> must be enabled to use this site. To control cookies, you can adjust your browser settings.</strong>
+  
+                                </div>
+
+                        </div>';
+        break;
+
+    }
+
+  }
+
+  return $cookieribbonhtml;
 
 }
 

@@ -42,6 +42,11 @@ input[id="id_cancel"] {
   @extend .c-btn--secondary;
 }
 
+// Input types
+input[type="password"] {
+  @extend .c-form-input;
+}
+
 /* List items used in Latest Announcements block */
 .unlist {
   @extend .o-list-bare;
@@ -91,4 +96,3 @@ ul.nav-tabs > li > a.active {
   @extend .c-tabs__link;
   @extend .is-current;
 }
-
