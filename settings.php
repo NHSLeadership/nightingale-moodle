@@ -94,10 +94,29 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
+    // Cookie Ribbon Setting
+    $name = 'theme_nightingale/cookieribbon';
+    $title = get_string('cookieribbon', 'theme_nightingale');
+    $description = get_string('cookieribbondesc', 'theme_nightingale');
+    $default = 'none';
+    $choices = array('yes' => 'Yes', 'no' => 'No');
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
     // Contact URL setting
     $name = 'theme_nightingale/contacturl';
     $title = get_string('contacturl', 'theme_nightingale');
     $description = get_string('contacturldesc', 'theme_nightingale');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    // Cookie URL setting
+    $name = 'theme_nightingale/cookieurl';
+    $title = get_string('cookieurl', 'theme_nightingale');
+    $description = get_string('cookieurldesc', 'theme_nightingale');
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');

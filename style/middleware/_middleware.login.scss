@@ -1,0 +1,47 @@
+/* ==========================================================================
+   #LOGIN
+   ========================================================================== */
+
+// Generic
+.c-login-divider {
+  @extend .c-page-header;
+  padding: 0;
+}
+
+.c-login-title {
+  margin-bottom: $global-spacing-unit-tiny;
+}
+
+//Remember password
+div.rememberpass {
+  margin-top: $global-spacing-unit-tiny;
+  margin-bottom: $global-spacing-unit-tiny;
+}
+
+// Actual Login form
+button[id="loginbtn"] {
+  @extend .c-btn--submit;
+  margin-top: $global-spacing-unit-small;
+}
+
+form[id="guestlogin"] {
+  margin-bottom: $global-spacing-unit;
+}
+
+// Forget Password
+div.forgetpass {
+  margin-top: $global-spacing-unit-small;
+}
+
+// Login errors box
+.loginerrors {
+  border: 4px solid color('error');
+  margin-bottom: $global-spacing-unit-tiny;
+  padding: $global-spacing-unit-tiny;
+  font-size: 0.8rem;
+}
+
+// Hide repetitive error message as it's a duplicate
+div.loginerrors a.accesshide {
+  display: none;
+}
