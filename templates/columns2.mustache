@@ -86,13 +86,15 @@
             </section>
             {{#hasblocks}}
             <section data-region="blocks-column" class="hidden-print o-layout__item u-4/12@lg">
-                {{{output.search_forum_form}}}
+                <hr class="c-divider"/>
                 {{{ sidepreblocks }}}
+                {{{ output.search_forum_form }}}
             </section>
             {{/hasblocks}}
             {{^hasblocks}}
                 <section data-region="blocks-column" class="hidden-print o-layout__item u-4/12@lg">
-                    {{{output.search_forum_form}}}
+                   <hr class="c-divider"/>
+                    {{{ output.search_forum_form }}}
                 </section>
             {{/hasblocks}}
         </div>

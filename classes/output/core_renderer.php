@@ -752,17 +752,17 @@ class core_renderer extends \core_renderer {
 
       $html = "";
 
+      // Display Forums on right in Blocks section.
+      $html .= $this->get_course_forum_section();
+
       if (empty($PAGE->layout_options['nonavbar'])) {
         $html .= html_writer::start_div('breadcrumb-button navbar pull-xs-right');
       } else if ($pageheadingbutton) {
         $html .= html_writer::div($pageheadingbutton, 'breadcrumb-button nonavbar pull-xs-right');
       }
-      $html .= html_writer::start_tag('hr', array('class' => 'c-divider'));
+
       $html .= $pageheadingbutton;
       $html .= html_writer::end_div();
-
-      // Display Forums on right in Blocks section.
-      $html .= $this->get_course_forum_section();
 
       return $html;
   }
