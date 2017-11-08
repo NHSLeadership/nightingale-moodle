@@ -32,8 +32,8 @@
   display: none;
 }
 
-// Hide 'General' section (Forums list) from Course Listing display as that would be displayed on right
-.course-content .topics li[id="section-0"] {
+// Hide 'General' section (Forums list) from Course Listing display as that would be displayed on right for Topics & Weeks course formats
+.course-content .topics li[id="section-0"], .course-content .weeks li[id="section-0"] {
   display: none;
 }
 
