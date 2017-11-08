@@ -3,9 +3,9 @@
    ========================================================================== */
 
 // Generic
-.c-login-divider {
-  @extend .c-page-header;
-  padding: 0;
+.c-divider-login {
+  @extend .c-divider;
+  margin-top: $global-spacing-unit-small;
 }
 
 .c-login-title {
@@ -44,4 +44,9 @@ div.forgetpass {
 // Hide repetitive error message as it's a duplicate
 div.loginerrors a.accesshide {
   display: none;
+}
+
+// Remove extra padding for header on Login page only
+header[id="jsPageHeaderLogin"] {
+  padding: 0;
 }
