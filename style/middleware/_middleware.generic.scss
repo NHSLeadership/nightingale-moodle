@@ -96,3 +96,13 @@ ul.nav-tabs > li > a.active {
   @extend .c-tabs__link;
   @extend .is-current;
 }
+
+// Overriding Hints, not switching them off
+img:not([alt]) {
+  outline: none;
+}
+
+// Some margin space just before the footer, at the end of main content area
+.o-layout--wide {
+  margin-bottom: $global-spacing-unit;
+}

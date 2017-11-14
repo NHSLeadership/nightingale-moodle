@@ -23,10 +23,14 @@ defined('MOODLE_INTERNAL') || die();
  */
 
 $bodyattributes = $OUTPUT->body_attributes();
+$themesettings = theme_nightingale_get_html_for_settings($OUTPUT, $PAGE);
+
 
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
     'output' => $OUTPUT,
+    'cookieribbonhtml' => $themesettings->cookieribbonhtml,
+    'logosrc'   => $themesettings->logosrc,
     'bodyattributes' => $bodyattributes
 ];
 

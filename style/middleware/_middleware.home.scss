@@ -1,0 +1,47 @@
+/* ==========================================================================
+   #HOME PAGE / FRONT PAGE
+   ========================================================================== */
+
+// Hide Skip links
+a.skip-block {
+  display: none;
+}
+
+// Hide Site News block
+div[id="site-news-forum"] {
+  display: none;
+}
+
+// Hide Main Menu block; any Static pages to be added off Base
+aside.block_site_main_menu {
+  display: none;
+}
+
+// Course Cards on Home & Course Index page
+div[id="frontpage-course-list"] div.courses.frontpage-course-list-all, div.course_category_tree div.courses.category-browse {
+  @extend .c-media;
+}
+
+div[id="frontpage-course-list"] div.courses.frontpage-course-list-all div.coursebox, div.course_category_tree div.courses.category-browse div.coursebox {
+  @extend .c-media__masthead;
+  margin-bottom: $global-spacing-unit;
+}
+
+div[id="frontpage-course-list"] div.coursebox div.content, div.course_category_tree div.coursebox div.content {
+  min-height: 5 * $global-spacing-unit;
+}
+
+div[id="frontpage-course-list"] div.coursebox div.content div.courseimage img, div.course_category_tree div.coursebox div.content div.courseimage img {
+  @extend .c-media__media;
+}
+
+div[id="frontpage-course-list"] div.courses.frontpage-course-list-all div.coursebox div.info, div.course_category_tree div.courses.category-browse div.coursebox div.info {
+  @extend .c-media__emblem;
+}
+
+// Changing font styling of Course title to be slightly smaller for Course cards than usual <h3> fonts
+div[id="frontpage-course-list"] div.courses.frontpage-course-list-all div.coursebox div.info h3, div.course_category_tree div.courses.category-browse div.coursebox div.info h3 {
+  @extend .c-media__emblem;
+  line-height: 1.52;
+  font-size: $global-font-size-h4;
+}

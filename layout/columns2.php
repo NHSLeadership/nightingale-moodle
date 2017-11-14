@@ -72,6 +72,7 @@ $templatecontext = [
     'footnote'  => $themesettings->footnote,
     'partnershipinfo' => $themesettings->partnershipinfo,
     'ribbonhtml'=> $themesettings->ribbonhtml,
+    'cookieribbonhtml' => $themesettings->cookieribbonhtml,
     'logosrc'   => $themesettings->logosrc,
     'sublogosrc'=> $themesettings->sublogosrc,
     'siteadminlink' => $siteadminhtml,

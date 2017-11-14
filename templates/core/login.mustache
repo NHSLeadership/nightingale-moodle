@@ -92,20 +92,10 @@
 }}
 
 <div class="m-y-3 hidden-sm-down"></div>
-{{{ cookieribbonhtml }}}
 <div class="row">
     <div class="col-xl-6 push-xl-3 m-2-md col-sm-8 push-sm-2">
         <div class="card">
             <div class="card-block">
-                <div class="card-title text-xs-center">
-                    {{#logourl}}
-                        <h2><img src="{{logourl}}" title="{{sitename}}" alt="{{sitename}}" width="204" height="62" class="c-page-header__logo" /></h2>
-                    {{/logourl}}
-                    {{^logourl}}
-                        <h2>{{sitename}}</h2>
-                    {{/logourl}}
-                    <div class="c-login-divider"></div>
-                </div>
 
                 {{#cansignup}}
                     <div class="sr-only">
@@ -116,7 +106,7 @@
                 <div class="o-layout o-layout-wide">
                     {{#hasinstructions}}
                     <div class="row o-layout__item u-8/12@lg">
-                        <hr class="c-divider"/>
+                        <hr class="c-divider-login" />
                         <div class="col-xl-6 push-xl-3 m-2-md col-sm-8 push-sm-2">
                             <div class="card">
                                 <div class="card-block">
@@ -138,7 +128,7 @@
                     </div>
                     {{/hasinstructions}}
                     <div class="row o-layout__item u-4/12@lg">
-                        <hr class="c-divider"/>
+                        <hr class="c-divider-login"/>
                         <div class="col-md-4 push-md-1">
                             <h2 class="c-login-title">Login</h2>
                            {{#error}}
