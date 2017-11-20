@@ -102,7 +102,56 @@ img:not([alt]) {
   outline: none;
 }
 
-// Some margin space just before the footer, at the end of main content area
+// Some margin space just before the footer, at the end of main content areas
 .o-layout--wide {
   margin-bottom: $global-spacing-unit;
+}
+
+// Hiding User Avatar for v1; To be pursued in future versions
+img.userpicture {
+  display: none;
+}
+
+// Generic Moodle classes used everywhere to be defined as is
+.hidden {
+  display: none;
+}
+
+.hidden-sm-up {
+  display: none;
+}
+
+.hidden-md-up {
+  display: none;
+}
+
+.text-xs-center {
+  text-align: center;
+}
+
+.m-t-3 {
+  margin-top: $global-spacing-unit;
+}
+
+.m-y-1 {
+  margin-top: $global-spacing-unit-small;
+}
+
+.m-b-1 {
+  margin-bottom: $global-spacing-unit-small;
+}
+
+.btn-group {
+  display: inline-block;
+}
+
+.list-group-item {
+  position: relative;
+  display: block;
+  border: 1px solid color('nhs-grey-pale');
+  padding: 0.75rem 1.25rem;
+}
+
+li {
+  list-style: none;
 }

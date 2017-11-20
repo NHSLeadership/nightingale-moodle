@@ -1,0 +1,44 @@
+/* ==========================================================================
+   #DASHBOARD
+   ========================================================================== */
+
+.tab-content > .tab-pane {
+  display: none;
+}
+
+.tab-content > .active {
+  display: block;
+}
+
+.block-myoverview .tab-content .tab-pane .row.text-xs-center {
+  text-align: center;
+}
+
+.block-myoverview .tab-content .tab-pane .text-xs-center .btn-group a.btn.btn-default {
+  @extend .c-tabs__link;
+  display: table-cell;
+  width: 40%;
+}
+
+.block-myoverview .tab-content .tab-pane .text-xs-center .btn-group a.btn.btn-default.active {
+  @extend .is-current;
+}
+
+.block-myoverview .tab-content .tab-pane div#courses-view-in-progress div#pc-for-in-progress div.courses-view-course-item div.course-info-container {
+  @extend .list-group-item;
+}
+
+// Hiding duplicate "Customise this page" button
+section[data-region="blocks-column"] div.breadcrumb-button.nonavbar.pull-xs-right div.singlebutton button[type="submit"] {
+  display: none;
+}
+
+
+// Copying Moodle's placeholder image CSS as is (responsive)
+.block_myoverview .empty-placeholder-image-lg {
+  height: 125px;
+}
+
+.block_myoverview .empty-placeholder-image-sm {
+  height: 50px;
+}
