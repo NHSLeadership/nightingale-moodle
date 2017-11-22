@@ -101,7 +101,7 @@ div.indent .forumpost .content .posting {
 
 .indent div.indent {
   border-left: 4px solid color('nhs-grey-pale');
-  padding-left: 11px;
+  padding-left: $global-spacing-unit-tiny + $global-border-mid;
 }
 
 .forumpost .options .commands {
@@ -218,6 +218,24 @@ form[id="mformforum"] .form-inline label.form-check.fitem {
 
 button[id="searchform_button"] {
   margin-top: $global-spacing-unit-tiny;
+}
+
+// Move & Pin Discussion
+div.movediscussionoption {
+  margin-top: $global-spacing-unit-small;
+}
+
+div.movediscussionoption input.btn.btn-secondary {
+  margin-top: $global-spacing-unit-tiny;
+}
+
+#page-mod-forum-discuss .discussioncontrols .discussioncontrol.pindiscussion {
+  margin-top: $global-spacing-unit-small;
+}
+
+// Subscription icon dots
+div.discussionsubscription i.icon.fa.fa-envelope-o.fa-fw {
+  margin-right: $global-spacing-unit-tiny / 2;
 }
 
 /**

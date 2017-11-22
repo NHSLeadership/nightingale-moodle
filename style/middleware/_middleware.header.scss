@@ -38,3 +38,12 @@ ul.c-nav-primary__sub-links li .courses.frontpage-course-list-all a {
   padding-right: 1ch;
   padding-left: 1ch;
 }
+
+/* Fixing Header alignments until permanent adjustments made into Nightingale */
+.c-nav-primary__link {
+  margin-top: $global-spacing-unit-small;
+}
+
+.c-page-header {
+  margin-bottom: $global-border-mid;
+}
