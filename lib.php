@@ -263,7 +263,7 @@ function theme_nightingale_get_cookieribbonhtml($cookieribbon) {
                                     <button class="c-sprite  c-sprite--close-rev" id="jsCookieBtn">Close</button>
                                   </div>
   
-                                  <strong class="c-ribbon__body"><span class="c-sprite  c-sprite--info-rev"></span> <a href="'.$cookieurl.'">Cookies <span class="c-sprite  c-sprite--new-window-rev"></span></a> must be enabled to use this site. To control cookies, you can adjust your browser settings.</strong>
+                                  <strong class="c-ribbon__body"><span class="c-sprite  c-sprite--info-rev"></span> <a href="'.$cookieurl.'" target="_blank">Cookies</a> must be enabled to use this site. To control cookies, you can adjust your browser settings.</strong>
   
                                 </div>
 
