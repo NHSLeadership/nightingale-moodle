@@ -39,7 +39,7 @@ form.navbuttontext.prev input[type="submit"] {
   @extend .c-btn--primary;
   @extend .c-btn--natural;
   white-space: normal;
-
+  height: $global-spacing-unit-large; // To make it look same height as Next button as it can shrink at times based on activity name's length
 }
 
 form.navbuttontext.next {
@@ -73,4 +73,9 @@ form.navbuttontext.next input[type="submit"] {
   @extend .c-sprite;
   @extend .c-sprite--play;
   @extend .c-media__emblem;
+}
+
+// Feedback :: Rate the topic -> heading needs to stay standard black as opposed to blue
+form[id="feedback_complete_form"] div.feedback_itemlist h3.delta.text-center {
+  color: color('nhs-black') !important;
 }
