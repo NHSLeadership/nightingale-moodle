@@ -27,3 +27,7 @@ ol.breadcrumb>li:first-child a {
   @extend .c-breadcrumb__link;
   @extend .c-sprite, .c-sprite--home;
 }
+
+ol.breadcrumb>li.breadcrumb-item:not(:first-child):not(:last-child) {
+  text-decoration: underline;
+}
