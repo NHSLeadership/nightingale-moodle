@@ -10,6 +10,7 @@ M.theme_nhsla_nightingale.main.init = function(Y, is_student) {
         // Hiding forum Group Selector if logged in user is Student
         if(is_student == true) {
             $(".groupselector").hide();
+            $("div#region-main-settings-menu").hide();
         }
 
     // End of Moodle Modification
