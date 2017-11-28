@@ -88,6 +88,8 @@
  */
 .indent {
   @extend .c-comments;
+  border-left: 4px solid color('nhs-grey-pale');
+  padding-left: $global-spacing-unit-tiny + $global-border-mid;
 }
 
 .forumpost .author {
