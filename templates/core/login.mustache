@@ -214,7 +214,8 @@
         </div> <!-- card close -->
     </div> <!-- col-xl-6 push-xl-3 m-2-md col-sm-8 push-sm-2 close -->
 </div>
-
+<!-- link to Nightingale cookies script -->
+<script src="node_modules/nightingale/js/cookies.js"></script>
 {{#js}}
     {{#error}}
         require(['jquery'], function($) {
@@ -232,21 +233,4 @@
             });
         {{/autofocusform}}
     {{/error}}
-    require(['jquery'], function($) {
-
-        var cookieRibbon = document.getElementById('jsCookieRibbon');
-        var cookieBtn = document.getElementById('jsCookieBtn');
-
-        // Don't show ribbon if cookie permission granted
-        if(localStorage.getItem("cookie-enable")=="1"){
-            cookieRibbon.parentNode.removeChild(cookieRibbon);
-        }
-
-         // Close cookie ribbon and store decision in local storage
-         cookieBtn.addEventListener('click', function () {
-            cookieRibbon.parentNode.removeChild(cookieRibbon);
-            // Store cookie permission
-            localStorage.setItem("cookie-enable", "1");
-         });
-    });
 {{/js}}
