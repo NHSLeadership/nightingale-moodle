@@ -33,11 +33,11 @@ if(user_has_role_assignment($USER->id,5)) { // 5 is the role id for Student
 
 // Call Theme Nightingale's main JS file
 $jsmodule = array(
-  'name' => 'theme_nhsla_nightingale',
+  'name' => 'theme_nightingale',
   'fullpath' => new moodle_url('/theme/nightingale/javascript/main.js')
 );
 
-$PAGE->requires->js_init_call('M.theme_nhsla_nightingale.main.init', $theme_nightingale_variables, false, $jsmodule);
+$PAGE->requires->js_init_call('M.theme_nightingale.main.init', $theme_nightingale_variables, false, $jsmodule);
 $PAGE->requires->jquery();
 $PAGE->requires->jquery_plugin('ui');
 
