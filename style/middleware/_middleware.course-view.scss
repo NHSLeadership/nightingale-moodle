@@ -63,17 +63,7 @@ form.navbuttontext.next input[type="submit"] {
   background: none;
 }
 
-// To give light overlay, although it wont work if we have a default poster image which overrides any background relay
-.mediaplugin.mediaplugin_videojs {
-  @extend .c-media__masthead;
-}
-
-// Play button
-.video-js .vjs-big-play-button {
-  @extend .c-sprite;
-  @extend .c-sprite--play;
-  @extend .c-media__emblem;
-}
+// @TO-DO: Get Nightingale styles in place for Video & Play button
 
 // Feedback :: Rate the topic -> heading needs to stay standard black as opposed to blue
 form[id="feedback_complete_form"] div.feedback_itemlist h3.delta.text-center {
