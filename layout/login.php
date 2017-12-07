@@ -25,13 +25,8 @@ defined('MOODLE_INTERNAL') || die();
 $bodyattributes = $OUTPUT->body_attributes();
 $themesettings = theme_nightingale_get_html_for_settings($OUTPUT, $PAGE);
 
-// Call Theme Nightingale's cookie JS file
-$jsmodule = array(
-  'name' => 'theme_nightingale',
-  'fullpath' => new moodle_url('/theme/nightingale/node_modules/nightingale/js/cookies.js')
-);
-
-$PAGE->requires->js_init_call('M.theme_nightingale.cookies', null, false, $jsmodule);
+// Calling nightingale's internal cookie.js file
+$PAGE->requires->js(new moodle_url('/theme/nightingale/node_modules/nightingale/js/cookies.js'));
 
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
