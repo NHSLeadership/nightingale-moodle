@@ -255,7 +255,7 @@ function theme_nightingale_get_cookieribbonhtml($cookieribbon) {
 
       case 'yes':
       default:
-        $cookieribbonhtml = '<div class="c-ribbon  u-margin-bottom" id="jsCookieRibbon">
+        $cookieribbonhtml = '<div class="c-ribbon" id="jsCookieRibbon">
 
                                 <div class="o-wrapper">
   

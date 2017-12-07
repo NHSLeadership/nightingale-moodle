@@ -37,9 +37,12 @@ $jsmodule = array(
   'fullpath' => new moodle_url('/theme/nightingale/javascript/main.js')
 );
 
+
 $PAGE->requires->js_init_call('M.theme_nightingale.main.init', $theme_nightingale_variables, false, $jsmodule);
 $PAGE->requires->jquery();
 $PAGE->requires->jquery_plugin('ui');
+// Calling nightingale's internal cookie.js file
+$PAGE->requires->js(new moodle_url('/theme/nightingale/node_modules/nightingale/js/cookies.js'));
 
 user_preference_allow_ajax_update('drawer-open-nav', PARAM_ALPHA);
 require_once($CFG->libdir . '/behat/lib.php');
