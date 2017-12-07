@@ -1,9 +1,9 @@
 /**
  * Created by ishani on 02/08/2017.
  */
-M.theme_nhsla_nightingale = M.theme_nhsla_nightingale || {};
-M.theme_nhsla_nightingale.main = {};
-M.theme_nhsla_nightingale.main.init = function(Y, is_student) {
+M.theme_nightingale = M.theme_nightingale || {};
+M.theme_nightingale.main = {};
+M.theme_nightingale.main.init = function(Y, is_student) {
 
     // Modify default Moodle stuff to match with Nightingale theme
 
@@ -16,7 +16,7 @@ M.theme_nhsla_nightingale.main.init = function(Y, is_student) {
     // End of Moodle Modification
 
 
-    // Theme NHSLA Nightingale JS
+    // Theme Nightingale JS
 
     // Submenus script
 
@@ -192,6 +192,6 @@ M.theme_nhsla_nightingale.main.init = function(Y, is_student) {
         page.style.color = '#231f21';
     };
     document.addEventListener("DOMContentLoaded", ready);
-        // End of Theme NHSLA Nightingale JS
+        // End of Theme Nightingale JS
 
 };
