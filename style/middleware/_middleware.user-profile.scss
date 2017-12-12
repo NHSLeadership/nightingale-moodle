@@ -1,0 +1,103 @@
+/* ==========================================================================
+   #USER PROFILE
+   ========================================================================== */
+
+// User profile blocks
+div.userprofile div.profile_tree section.node_category {
+
+  border: 1px solid color('nhs-grey-pale');
+  margin-bottom: $global-spacing-unit-tiny;
+  padding: $global-spacing-unit-tiny;
+  border-radius: 0.25rem;
+
+}
+
+// Usage of dl, dt, dd
+dt {
+  @extend label;
+}
+
+// Forum Preferences :: Duplicate 'Forum Tracking' link
+fieldset[id="id_trackreadposts"] legend.ftoggler {
+  display: none;
+}
+
+// Change Password :: Heading
+fieldset[id="id_changepassword"] legend.ftoggler {
+  @extend h3;
+}
+
+// Message Preferences
+div.checkbox-container label {
+  display: inline-block;
+  margin-left: $global-spacing-unit-tiny;
+}
+
+span.loading-icon {
+  display: none;
+}
+
+div.preferences-page-container div.preferences-container table.preference-table {
+  @extend .c-table-data;
+}
+
+td.align-bottom {
+  vertical-align: bottom;
+}
+
+div.preferences-page-container div.preferences-container table.preference-table .span6.col-xs-6 {
+  float: left;
+  width: 50%;
+}
+
+div.disabled-message {
+  display: none;
+}
+
+
+// Notification Preferences :: Pretty much retaining Moodle style to get rid of the addtl text 'Requires configuration' in tbl header
+div.hover-tooltip-container {
+  position: relative;
+}
+
+div.hover-tooltip-container span.config-warning {
+  display: none;
+}
+
+div.hover-tooltip-container div.hover-tooltip {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  left: 50%;
+  top: calc(-50% - 5px);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: .3rem;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: $global-spacing-unit-tiny;
+  white-space: nowrap;
+  -webkit-transition: opacity .15s, visibility .15s;
+  -o-transition: opacity .15s, visibility .15s;
+  transition: opacity .15s, visibility .15s;
+  z-index: 1000;
+}
+
+
+// Edit Profile
+div.collapsible-actions a.collapseexpand {
+  display: none;
+}
+
+fieldset.clearfix.collapsible legend.ftoggler {
+  display: none;
+}
+
+a.btn.btn-link.p-a-0 {
+  display: none; // Hiding help info icon buttons almost invisible in appearance, and not required in Nightingale version
+}
