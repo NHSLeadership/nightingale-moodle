@@ -33,6 +33,10 @@ textarea {
   @extend .c-btn--primary;
 }
 
+div.singlebutton {
+  margin-bottom: $global-spacing-unit-tiny;
+}
+
 // Certain submit, primary, secondary buttons need special tracking to have proper Nightingale classes
 input[type="submit"] {
   @extend .c-btn--submit;
