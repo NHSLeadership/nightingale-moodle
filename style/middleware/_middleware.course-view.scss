@@ -3,19 +3,17 @@
    ========================================================================== */
 // Navbuttons plugin
 #navbuttons {
+  @extend .c-pagination;
   margin-bottom: $global-spacing-unit-small;
   border-bottom: 1px solid color('nhs-grey-mid');
   border-top: 1px solid color('nhs-grey-mid');
   padding: $global-spacing-unit-small;
 }
 
-#navbuttons .navbuttontext {
-  float: none;
-}
-
 form.togglecompletion.navbuttontext {
   text-align: center;
   margin-bottom: $global-spacing-unit-tiny;
+  width: 100%;
 }
 
 form.togglecompletion.navbuttontext input.custom_activity_completion {
@@ -26,36 +24,32 @@ form.togglecompletion.navbuttontext input.custom_activity_completion {
   white-space: normal;
 }
 
-form.navbuttontext.prev {
+a.navbuttontext {
   display: inline-block;
-  float: left;
   text-align: left;
   width: 50%;
   padding-left: $global-spacing-unit-tiny;
-}
-
-form.navbuttontext.prev input[type="submit"] {
-  @extend .c-btn;
-  @extend .c-btn--primary;
-  @extend .c-btn--natural;
+  color: color('nhs-blue');
   white-space: normal;
-  height: $global-spacing-unit-large; // To make it look same height as Next button as it can shrink at times based on activity name's length
 }
 
-form.navbuttontext.next {
-  display: inline-block;
-  float: right;
+a.navbuttontext.prev {
+  @extend .is-current;
+}
+
+a.navbuttontext.next {
   text-align: right;
-  width: 50%;
-  padding-left: $global-spacing-unit-tiny;
 }
 
-form.navbuttontext.next input[type="submit"] {
-  @extend .c-btn;
-  @extend .c-btn--submit;
-  @extend .c-btn--natural;
-  white-space: normal;
-  height: $global-spacing-unit-large; // To make it look same height as Prev button as it can shrink at times based on activity name's length
+span.navbuttontext.prev-span {
+  @extend .c-sprite;
+  @extend .c-sprite--prev-grey;
+}
+
+#navbuttons span.navbuttontext.next-span {
+  @extend .c-sprite;
+  @extend .c-sprite--next-blue;
+  float: right;
 }
 
 // Video Plugin
