@@ -1,0 +1,49 @@
+/* ==========================================================================
+   #ASSIGNMENT (turnitin) PAGES
+   ========================================================================== */
+
+div.listbar-container div.top.listbar div.dataTables_length label, div.dataTables_length label {
+  font-size: $global-font-size-h5;
+  font-weight: normal;
+}
+
+a[id="nonsubmitters_4"] {
+  font-size: $global-font-size-h5;
+}
+
+a.messages_inbox.cboxElement {
+  font-size: $global-font-size-h5;
+}
+
+div[id="refresh_4"], div[id="refreshing_4"] {
+  float: left;
+  font-size: $global-font-size-h5;
+  margin-left: $global-spacing-unit-large;
+  text-align: center;
+}
+
+span.loading-message {
+  font-size: $global-font-size-h5;
+  font-weight: normal;
+}
+
+td.rubric_qm.cell.c6.lastcol {
+  width: 16%;
+}
+
+.listbar label {
+  font-size: $global-font-size-h5;
+}
+
+.partDetails a.editable-click:before {
+    right: -$global-spacing-unit-tiny;
+}
+
+div.dataTables_filter label {
+  font-size: $global-font-size-h5;
+  font-weight: normal;
+}
+
+div.listbar-container div.top.listbar div[id="4_length"], div.members.members-instructors div.dataTables_length {
+  @extend .c-form-dropdown;
+}
