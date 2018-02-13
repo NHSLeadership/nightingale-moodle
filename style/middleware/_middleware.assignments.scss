@@ -35,6 +35,10 @@ td.rubric_qm.cell.c6.lastcol {
   font-size: $global-font-size-h5;
 }
 
+div[id="cboxWrapper"], div[id="cboxLoadedContent"] {
+  height: round(10.16 * $global-spacing-unit-large) !important;
+}
+
 .partDetails a.editable-click:before {
     right: -$global-spacing-unit-tiny;
 }
