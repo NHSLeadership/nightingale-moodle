@@ -88,4 +88,16 @@ section[data-region="blocks-column"] ul.section.img-text {
   margin-left: 0;
 }
 
+// Remove teacher's name from course box listing
+div.coursebox div.content ul.teachers {
+  display: none;
+}
 
+// Remove additional activity names (Ex: the word 'Lesson' for lesson activities defined by class .accesshide
+// Copied default Moodle styling
+.accesshide {
+  position: absolute;
+  left: -10000px;
+  font-weight: 400;
+  font-size: 1em;
+}
