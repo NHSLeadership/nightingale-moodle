@@ -32,7 +32,7 @@ div[id="frontpage-course-list"] div.coursebox div.content, div.course_category_t
 }
 
 div[id="frontpage-course-list"] div.coursebox div.content div.courseimage img, div.course_category_tree div.coursebox div.content div.courseimage img {
-  @extend .c-media__media;
+  @extend .c-media__media !optional;
 }
 
 div[id="frontpage-course-list"] div.courses.frontpage-course-list-all div.coursebox div.info, div.course_category_tree div.courses.category-browse div.coursebox div.info, div[id="frontpage-course-list"] div.courses.frontpage-course-list-enrolled div.coursebox div.info {
