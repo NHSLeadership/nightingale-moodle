@@ -1,0 +1,33 @@
+/* ==========================================================================
+   #QUIZ ACTIVITY - A way to map quiz elements with cleaner Nightingale classes.
+   ========================================================================== */
+
+.que .info {
+  background-color: color('nhs-grey-pale');
+  font-size: ($global-font-size / $global-font-size-h3) * 1em;
+  margin: 0 0 1rem 0;
+  padding: 0 1rem;
+}
+
+.que .info h3 {
+  font-size: ($global-font-size / $global-font-size-h4) * 1em;
+  line-height: $global-line-height / $global-font-size-h4;
+  font-weight: bold;
+  margin: 0 1rem 1rem 0;
+}
+
+.que .content {
+  background-color: $color-ribbon-expandable-bg;
+  border-color: $color-ribbon-expandable-bg;
+  color: $color-text;
+  padding: 1rem;
+}
+
+.que .content .formulation .ablock table.answer td.control {
+  @extend .c-form-dropdown;
+}
+
+.que.multichoice .answer div.r0 label, .que.multichoice .answer div.r1 label {
+  display: inline-block;
+  font-weight: normal;
+}
