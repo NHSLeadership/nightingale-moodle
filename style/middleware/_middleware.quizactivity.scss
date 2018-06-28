@@ -3,22 +3,18 @@
    ========================================================================== */
 
 .que .info {
-  background-color: color('nhs-grey-pale');
   font-size: ($global-font-size / $global-font-size-h3) * 1em;
   margin: 0 0 1rem 0;
   padding: 0 1rem;
 }
 
 .que .info h3 {
-  font-size: ($global-font-size / $global-font-size-h4) * 1em;
   line-height: $global-line-height / $global-font-size-h4;
   font-weight: bold;
   margin: 0 1rem 1rem 0;
 }
 
 .que .content {
-  background-color: $color-ribbon-expandable-bg;
-  border-color: $color-ribbon-expandable-bg;
   color: $color-text;
   padding: 1rem;
 }
@@ -28,6 +24,21 @@
 }
 
 .que.multichoice .answer div.r0 label, .que.multichoice .answer div.r1 label {
+  display: inline-block;
+  font-weight: normal;
+}
+
+.mod_quiz-prev-nav.btn.btn-secondary {
+  @extend .c-btn;
+  @extend .c-btn--secondary;
+  margin-bottom: $global-spacing-unit-small;
+}
+
+#page-mod-quiz-attempt .submitbtns .mod_quiz-next-nav, #page-mod-quiz-review .submitbtns .mod_quiz-next-nav {
+  margin-bottom: $global-spacing-unit-small;
+}
+
+.answeroption .row .checkbox label p, .answeroption .row .checkbox label {
   display: inline-block;
   font-weight: normal;
 }

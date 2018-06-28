@@ -159,3 +159,11 @@ img.userpicture {
 .c-page-footer__nav-item li {
   list-style: none;
 }
+
+.text_to_html {
+  @extend .c-card;
+  @extend .c-card--information;
+  @include font-size(14px, 20/14);
+  display: inline-block;
+}
+

@@ -52,6 +52,12 @@ span.navbuttontext.prev-span {
   float: right;
 }
 
+// Media Plugin
+div[id="video_player"] .mediaplugin.mediaplugin_videojs {
+  width: 100%;
+  max-width: 100%;
+}
+
 // Video Plugin
 .video-js {
   background: none;
