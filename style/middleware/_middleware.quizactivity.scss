@@ -32,12 +32,10 @@
   @extend .c-btn;
   @extend .c-btn--secondary;
   margin-bottom: $global-spacing-unit-small;
-  box-shadow: none;
 }
 
 #page-mod-quiz-attempt .submitbtns .mod_quiz-next-nav, #page-mod-quiz-review .submitbtns .mod_quiz-next-nav {
   margin-bottom: $global-spacing-unit-small;
-  box-shadow: none;
 }
 
 .answeroption .row .checkbox label p, .answeroption .row .checkbox label {
