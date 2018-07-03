@@ -42,3 +42,22 @@
   display: inline-block;
   font-weight: normal;
 }
+
+.text_to_html .studentanswer.m-t-2.m-b-2 {
+  margin-bottom: $global-spacing-unit;
+  margin-top: $global-spacing-unit;
+}
+
+.generaltable td {
+  padding: $global-spacing-unit-tiny;
+}
+
+.generaltable tbody>tr:nth-child(odd)>td {
+  background-color: color('nhs-grey-pale');
+}
+
+.answer label {
+  display: inline-block;
+  font-weight: normal;
+  margin-left: 8px;
+}
