@@ -88,6 +88,10 @@ $grid-breakpoints: (
   @extend .modal-title;
 }
 
+.moodle-dialogue-hd h1 {
+  font-size: $global-font-size-h2;
+}
+
 .moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd .yui3-widget-buttons {
   /*rtl:raw:
       left: 0;

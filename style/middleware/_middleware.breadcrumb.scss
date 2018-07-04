@@ -9,6 +9,7 @@
 
 div.breadcrumb-nav nav{
   @extend .c-breadcrumb;
+  margin: 0 0 $global-spacing-unit 0;
 }
 
 ol.breadcrumb {
