@@ -77,7 +77,7 @@
 .answer label {
   display: inline-block;
   font-weight: normal;
-  margin-left: 8px;
+  margin-left: $global-spacing-unit-tiny;
 }
 
 table.generaltable.quizattemptsummary {
