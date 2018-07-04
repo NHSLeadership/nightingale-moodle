@@ -66,6 +66,10 @@
   padding: $global-spacing-unit-tiny;
 }
 
+.correctanswer.generalbox em {
+  font-weight: bold;
+}
+
 .generaltable tbody>tr:nth-child(odd)>td {
   background-color: color('nhs-grey-pale');
 }
