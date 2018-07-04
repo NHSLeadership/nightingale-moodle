@@ -41,4 +41,45 @@
 .answeroption .row .checkbox label p, .answeroption .row .checkbox label {
   display: inline-block;
   font-weight: normal;
+  float: left;
+  width: 95%;
+}
+
+.answeroption .row .checkbox label input[type='checkbox'] {
+  float: left;
+  margin-top: $global-spacing-unit-tiny;
+  margin-left: $global-spacing-unit-tiny;
+}
+
+.answer label {
+  display: inline-block;
+  margin-left: $global-spacing-unit-tiny;
+  font-weight: normal;
+}
+
+.text_to_html .studentanswer.m-t-2.m-b-2 {
+  margin-bottom: $global-spacing-unit;
+  margin-top: $global-spacing-unit;
+}
+
+.generaltable td {
+  padding: $global-spacing-unit-tiny;
+}
+
+.correctanswer.generalbox em {
+  font-weight: bold;
+}
+
+.generaltable tbody>tr:nth-child(odd)>td {
+  background-color: color('nhs-grey-pale');
+}
+
+.answer label {
+  display: inline-block;
+  font-weight: normal;
+  margin-left: $global-spacing-unit-tiny;
+}
+
+table.generaltable.quizattemptsummary {
+  @extend .c-table-data;
 }
