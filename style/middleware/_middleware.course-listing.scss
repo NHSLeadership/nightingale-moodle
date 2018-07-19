@@ -49,7 +49,7 @@ ul.section.img-text img.iconlarge.activityicon {
 
 // Start of Completion icon button styling
 li.activity .actions button.btn.btn-link {
-  width: unset;
+  width: auto;
   border: none;
   transition: unset;
   padding: 0;
@@ -73,7 +73,7 @@ li.activity .actions button.icon {
 }
 
 li.activity .actions span.autocompletion img {
-  margin-top: -$global-spacing-unit;
+  margin-top: -$global-font-size-h1;
 }
 
 // End of completion icon changes
