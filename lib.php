@@ -60,7 +60,7 @@ function theme_nightingale_set_logo($css, $logo) {
     $tag = '[[setting:logo]]';
     $replacement = $logo;
     if (is_null($replacement)) {
-        $replacement = '';
+        $replacement = 'pix/logo.png';
     }
 
     $css = str_replace($tag, $replacement, $css);
