@@ -461,9 +461,11 @@ class core_renderer extends \core_renderer {
         $url = $themesettings->logosrc;
 
         if (!$url) {
-          $url = $this->get_logo_url();
-          $url = $url->out(false);
-        } 
+            $url = $this->get_logo_url();
+            if ($url) {
+                $url = $url->out(false);
+            }
+        }
 
         $context->logourl = $url;
         $context->sitename = format_string($SITE->fullname, true, ['context' => context_course::instance(SITEID), "escape" => false]);
@@ -747,13 +749,13 @@ class core_renderer extends \core_renderer {
    */
   public function search_forum_form() {
 
-      global $PAGE;
+      global $PAGE, $COURSE;
       $pageheadingbutton = $this->page_heading_button();
 
       $html = "";
 
       // Display Forums on right in Blocks section.
-      $html .= $this->get_course_forum_section();
+      $html .= $this->get_course_forum_section($PAGE, $COURSE);
 
       if (empty($PAGE->layout_options['nonavbar'])) {
         $html .= html_writer::start_div('breadcrumb-button navbar pull-xs-right');
@@ -767,28 +769,30 @@ class core_renderer extends \core_renderer {
       return $html;
   }
 
-  /**
-   * HTML for 'General' section containing forums so they can be
-   * outputted with other blocks on right
-   *
-   * @return string
-   */
-  public function get_course_forum_section() {
+    /**
+     * HTML for 'General' section containing forums so they can be
+     * outputted with other blocks on right
+     * @param $page
+     * @param $course
+     * @return string
+     * @throws \moodle_exception
+     * @throws coding_exception
+     */
+  public function get_course_forum_section($page, $course) {
 
-    global $PAGE, $COURSE;
-
-    $modinfo = get_fast_modinfo($COURSE);
+    $modinfo = get_fast_modinfo($course);
     $o = "";
 
-    $course_renderer = $PAGE->get_renderer('course');
+    $course_renderer = $page->get_renderer('course');
 
-    $thissection = $modinfo->get_section_info(0);
-    if ($thissection->summary or !empty($modinfo->sections[0]) or $PAGE->user_is_editing()) {
+      $thisSection = $modinfo->get_section_info(0);
+
+    if ($thisSection && $thisSection->summary || !empty($modinfo->sections[0]) || $page->user_is_editing()) {
 
       $o .= html_writer::start_tag('h3');
       $o .= get_string('forumsheading', 'theme_nightingale');
       $o .= html_writer::end_tag('h3');
-      $o .= $course_renderer->course_section_cm_list($COURSE, $thissection, 0);
+      $o .= $course_renderer->course_section_cm_list($course, $thisSection, 0);
       $o .= html_writer::start_tag('hr', array('class' => 'c-divider'));
 
     }
