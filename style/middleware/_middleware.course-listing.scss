@@ -37,6 +37,14 @@
   display: none;
 }
 
+.course-content ul li.section.main {
+  border-bottom: $border-width solid $table-border-color;
+  margin-top: 0;
+  &:last-child {
+	border-bottom: 0;
+  }
+}
+
 // No list bullets on course listing page anywhere
 ul.section.img-text li {
   list-style: none;
